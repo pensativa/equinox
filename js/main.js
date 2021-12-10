@@ -78,6 +78,10 @@ function hashGoToSlide() {
   if(hash === '#contacts') {
     pageSlider.slideTo(10, 0);
   }
+
+  if(hash === '#order') {
+    pageSlider.slideTo(6, 0);
+  }
 }
 
 //Удаляет хэш из url
