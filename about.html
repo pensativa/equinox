@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale = 1.0">
     <title>О нас | EQUINOX</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="preload" href="fonts/Equinox-Regular.woff2" as="font" crossorigin="anonymous">
 </head>
 
 <body class="full-screen">
   <div style="display:none">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-arrow" viewBox="0 0 50 50">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-menu" viewBox="0 0 30 18">
+    <line x1="2" y1="1" x2="30" y2="1" stroke-width="2"></line>
+    <line x1="1" y1="9" x2="29" y2="9" stroke-width="2"></line>
+    <line y1="17" x2="28" y2="17" stroke-width="2"></line>
+    </symbol><symbol id="icon-arrow" viewBox="0 0 50 50">
     <circle cx="25" cy="25" r="23.5" stroke="#707070" stroke-width="3"></circle>
     <line x1="25.3804" y1="12.6941" x2="25.3804" y2="30.5896" stroke="#707070" stroke-width="3" stroke-linecap="round"></line>
     <path d="M23.9393 38.0008C24.5251 38.5866 25.4749 38.5866 26.0607 38.0008L35.6066 28.4549C36.1924 27.8691 36.1924 26.9194 35.6066 26.3336C35.0208 25.7478 34.0711 25.7478 33.4853 26.3336L25 34.8189L16.5147 26.3336C15.9289 25.7478 14.9792 25.7478 14.3934 26.3336C13.8076 26.9194 13.8076 27.8691 14.3934 28.4549L23.9393 38.0008ZM26.5 36.1939C26.5 35.3655 25.8284 34.6939 25 34.6939C24.1716 34.6939 23.5 35.3655 23.5 36.1939L26.5 36.1939ZM26.5 36.9402L26.5 36.1939L23.5 36.1939L23.5 36.9402L26.5 36.9402Z"></path>
@@ -61,10 +65,22 @@
           <img class="header__logo-img" src="img/logo.svg" alt="Logo EQUINOX">
         </a>
       </div>
+      <div class="language">
+        <span class="language-icon"></span>
+        <span class="language-items">UA</span>
+        <span class="language-items active">RU</span>
+      </div>
       <div class="header__right">
         <a class="header__phone" href="tel:+3800000000">+38 096 642 02 01</a>
         <a class="header__contact" href="index.html#order">заказать</a>
-        <a class="header__menu" href="">МЕН<span>Ю</span></a>
+        <a class="header__menu" href="">
+          <p class="header__burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </p>
+          МЕН<span>Ю</span>
+        </a>
       </div>
     </div>
     <div class="social-round">
@@ -89,11 +105,6 @@
         </svg>
       </div>
     </div>
-    <div class="language">
-      <span class="language-icon"></span>
-      <span class="language-items">UA</span>
-      <span class="language-items active">RU</span>
-    </div>
     <nav class="main__nav">
       <ul class="main-nav__menu wrapper">
         <li class="main-nav__item active">О нас</li>
@@ -106,7 +117,6 @@
   </header>
     <main class="page">
       <div class="page__wrapper wrapper">
-        <!--<canvas id="smoke"></canvas>-->
         <canvas id="lines"></canvas>
         <div class="page__screen screen__first">
           <div class="screen__content about-page">

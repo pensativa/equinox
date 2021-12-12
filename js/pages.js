@@ -8,7 +8,7 @@ const projectSlider = new Swiper('.project__slider', {
   on: {
     init: function () {
       replaseActiveSlide();
-  },
+    },
     slideChange: function () {
       replaseActiveSlide();
     },
