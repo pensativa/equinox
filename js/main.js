@@ -12,8 +12,8 @@ let pageSlider = new Swiper('.page', {
     // Количество слайдов для показа
     slidesPerView: 'auto',
 
-    //Эффект плавного переключение между слайдами
-    effect: 'fade',
+    //Эффект переключение слайдов
+    effect: effect(),
     edeEffect: {
       crossFade: true
     },
@@ -41,7 +41,6 @@ let pageSlider = new Swiper('.page', {
     on: {
         init: function () {
             menuSlider();
-            setScrollType();
             hashGoToSlide();
         },
         slideChange: function () {
@@ -50,10 +49,6 @@ let pageSlider = new Swiper('.page', {
             menuSlider();
             setTimeout(deleteHash, 1000);
             menuLinks[pageSlider.realIndex].classList.add('active');
-        },
-
-        resize: function() {
-            setScrollType();
         },
         
     },
@@ -161,24 +156,13 @@ function addClassForSocialRound() {
   }
 }
 
-//?
-function setScrollType() {
-    if (wrapper.classList.contains('_free')) {
-        wrapper.classList.remove('_free');
-        pageSlider.params.freeMode = false;
-    }
-    for (let index = 0; index < pageSlider.slides.length; index++) {
-        const pageSlide = pageSlider.slides[index];
-        const pageSlideContent = pageSlide.querySelector('.screen__content');
-        if (pageSlideContent) {
-            const pageSlideContentHeight = pageSlideContent.offsetHeight;
-            if (pageSlideContentHeight > window.innerHeight) {
-                wrapper.classList.add('_free');
-                pageSlider.params.freeMode = true;
-                break;
-            }
-        }
-    }
+//Type effect
+function effect() {
+  if(window.innerWidth < 700 || window.innerHeight < 600) {
+    return 'slide';
+  } else {
+    return 'fade';
+  }
 }
 
 pageSlider.init();

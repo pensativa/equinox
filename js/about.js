@@ -10,10 +10,10 @@ const pageSlider = new Swiper('.page', {
     direction: 'vertical',
 
     // Количество слайдов для показа
-    slidesPerView: '1',
+    slidesPerView: 'auto',
 
     //Эффект плавного переключение между слайдами
-    effect: 'fade',
+    effect: effect(),
     edeEffect: {
       crossFade: true
     },
@@ -28,6 +28,11 @@ const pageSlider = new Swiper('.page', {
     mousewheel: {
         sensitivity: 1,
     },
+    watchOverflow: true,
+    speed: 800,
+    observer: true,
+    observeParents: true,
+    observeSlideChildren: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -38,7 +43,6 @@ const pageSlider = new Swiper('.page', {
     init: false,
     on: {
         init: function () {
-            setScrollType();
             showContacts();
             bigLogo();
         },
@@ -46,11 +50,6 @@ const pageSlider = new Swiper('.page', {
           showContacts();
           bigLogo();
         },
-
-        resize: function() {
-            setScrollType();
-        },
-        
     },
 });
 
@@ -58,8 +57,14 @@ function showContacts() {
   const phone = document.querySelector('.about-page__footer .phone');
   const email = document.querySelector('.about-page__footer .email');
   if (pageSlider.realIndex === 3) {
-    phone.style.transform = 'translateY(-50px)';
-    email.style.transform = 'translateY(-50px)';
+    if(window.innerWidth < 700 || window.innerHeight < 600) {
+      phone.style.transform = 'translateY(0)';
+      email.style.transform = 'translateY(0)';
+    } else {
+      phone.style.transform = 'translateY(-50px)';
+      email.style.transform = 'translateY(-50px)';
+    }
+
   } else {
     phone.style.transform = 'translateY(100vh)';
     email.style.transform = 'translateY(100vh)';
@@ -76,24 +81,13 @@ function bigLogo() {
 
 }
 
-//?
-function setScrollType() {
-    if (wrapper.classList.contains('_free')) {
-        wrapper.classList.remove('_free');
-        pageSlider.params.freeMode = false;
-    }
-    for (let index = 0; index < pageSlider.slides.length; index++) {
-        const pageSlide = pageSlider.slides[index];
-        const pageSlideContent = pageSlide.querySelector('.screen__content');
-        if (pageSlideContent) {
-            const pageSlideContentHeight = pageSlideContent.offsetHeight;
-            if (pageSlideContentHeight > window.innerHeight) {
-                wrapper.classList.add('_free');
-                pageSlider.params.freeMode = true;
-                break;
-            }
-        }
-    }
+//Type effect
+function effect() {
+  if(window.innerWidth < 700 || window.innerHeight < 600) {
+    return 'slide';
+  } else {
+    return 'fade';
+  }
 }
 
 pageSlider.init();
@@ -163,14 +157,6 @@ pageSlider.init();
       $(this).addClass('active');
     }
   });
-
-  //Callback
-  document
-        .querySelector('.header__contact')
-        .addEventListener('click', function (e) {
-          e.preventDefault();
-          pageSlider.slideTo(6, 0.3);
-        });
 
   //test canvas
 

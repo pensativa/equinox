@@ -2,7 +2,7 @@
   //Sliders
 const projectSlider = new Swiper('.project__slider', {
 
-  effect: "cards",
+  effect: effect(),
   grabCursor: true,
   init: false,
   on: {
@@ -14,6 +14,14 @@ const projectSlider = new Swiper('.project__slider', {
     },
   },
 });
+
+function effect() {
+  if(window.innerWidth < 700 || window.innerHeight < 600) {
+    return 'slide';
+  } else {
+    return 'card';
+  }
+}
 
 function replaseActiveSlide() {
   const srcSlide = $('.swiper-slide-active img').attr('src');
