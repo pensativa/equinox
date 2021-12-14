@@ -158,7 +158,7 @@ function addClassForSocialRound() {
 
 //Type effect
 function effect() {
-  if(window.innerWidth < 700 || window.innerHeight < 600) {
+  if(window.innerWidth < 855 || window.innerHeight < 800) {
     return 'slide';
   } else {
     return 'fade';

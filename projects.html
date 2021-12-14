@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0">
-    <title>О нас | EQUINOX</title>
+    <title>Название проекта | EQUINOX</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="preload" href="fonts/Equinox-Regular.woff2" as="font" crossorigin="anonymous">
 </head>
 
-<body class="full-screen">
+<body class="pages">
   <div style="display:none">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-menu" viewBox="0 0 30 18">
     <line x1="2" y1="1" x2="30" y2="1" stroke-width="2"></line>
@@ -58,11 +59,11 @@
     <path d="M17.8808 7.02003L11.7642 9.70036L18.0392 10.52L18.6671 11.9742L15.119 17.0158L21.0846 14.4399L22.3904 17.464L10.8227 22.4589L9.65965 19.7652L14.5805 12.8173L6.19179 11.734L5.02871 9.04034L16.5821 4.01243L17.8808 7.02003Z"></path>
     </symbol></svg>
   </div>
-  <header class="header">
+  <header class="header pages__header">
     <div class="header__wrapper wrapper">
       <div class="header__left">
         <a class="header__logo-link" href="index.html">
-          <img class="header__logo-img" src="img/logo.svg" alt="Logo EQUINOX">
+          <img class="header__logo-img" src="img/logo-menu.svg" alt="Logo EQUINOX">
         </a>
       </div>
       <div class="language">
@@ -83,7 +84,7 @@
         </a>
       </div>
     </div>
-    <div class="social-round">
+    <div class="social-round out">
       <div class="social__item social__item--acc">
         <svg width="105" height="105">
           <use xlink:href="#icon-behance"></use>
@@ -107,117 +108,98 @@
     </div>
     <nav class="main__nav">
       <ul class="main-nav__menu wrapper">
-        <li class="main-nav__item active">О нас</li>
-        <li class="main-nav__item slide-link slide-7"><a href="projects.html">Портфолио</a></li>
+        <li class="main-nav__item"><a href="about.html">О нас</a></li>
+        <li class="main-nav__item active">Портфолио</li>
         <li class="main-nav__item slide-link slide-8"><a href="index.html#services">Услуги</a></li>
         <li class="main-nav__item slide-link slide-9"><a href="index.html#review">Отзывы</a></li>
         <li class="main-nav__item slide-link slide-10"><a href="contacts.html">контакты</a></li>
       </ul>
     </nav>
   </header>
-    <main class="page">
-      <div class="page__wrapper wrapper">
-        <canvas id="lines"></canvas>
-        <div class="page__screen screen__first">
-          <div class="screen__content about-page">
-            <div class="content-column">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn <span class="accent">are lorem placerat et.</span> Cras fermentum est eu ligula vestibulum molestie. Cras tincidunt dui nunc, quis viverra n...</p>
-            </div>
-            <div class="content-column">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn <span class="underline">are lorem placerat et.</span> Cras fermentum est eu ligula vestibulum molestie. Cras tincidunt dui nunc, quis viverra n..</p>
-            </div>
+  <main class="pages__main">
+    <section class="project__main">
+      <div class="wrapper">
+        <h1 class="pages__title">Портфолио наших работ</h1>
+        <p class="projects__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada  eleifend erat, ac ornare lorem placerat et. Cras fermentum est eu ligula  sit amet, consectetur adipiscing</p>
+        <div class="tabs">
+          <a href="" class="tab active">Все работы</a>
+          <a href="" class="tab">Лендинги</a>
+          <a href="" class="tab">Дизайн</a>
+          <a href="" class="tab">Информационные сайты</a>
+        </div>
+        <div class="projects__list">
+          <div class="portfolio__item">
+            <img src="img/port1.png" alt="" class="portfolio__img">
+            <h3 class="portfolio__item-title">Название проекта</h3>
+            <span class="portfolio__catigoria">категория</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada  eleifend erat, ac ornare lorem placerat et. Cras fermentum est eu ligula  sit amet, consectetur adipiscing</p>
+            <a href="project.html" class="project__link">Смотреть проект</a>
+          </div>
+          <div class="portfolio__item">
+            <img src="img/port2.png" alt="" class="portfolio__img">
+            <h3 class="portfolio__item-title">Название проекта</h3>
+            <span class="portfolio__catigoria">категория</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada  eleifend erat, ac ornare lorem placerat et. Cras fermentum est eu ligula  sit amet, consectetur adipiscing</p>
+            <a href="project.html" class="project__link">Смотреть проект</a>
+          </div>
+          <div class="portfolio__item">
+            <img src="img/port3.png" alt="" class="portfolio__img">
+            <h3 class="portfolio__item-title">Название проекта</h3>
+            <span class="portfolio__catigoria">категория</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada  eleifend erat, ac ornare lorem placerat et. Cras fermentum est eu ligula  sit amet, consectetur adipiscing</p>
+            <a href="project.html" class="project__link">Смотреть проект</a>
+          </div>
+          <div class="portfolio__item">
+            <img src="img/port1.png" alt="" class="portfolio__img">
+            <h3 class="portfolio__item-title">Название проекта</h3>
+            <span class="portfolio__catigoria">категория</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada  eleifend erat, ac ornare lorem placerat et. Cras fermentum est eu ligula  sit amet, consectetur adipiscing</p>
+            <a href="project.html" class="project__link">Смотреть проект</a>
+          </div>
+          <div class="portfolio__item">
+            <img src="img/port2.png" alt="" class="portfolio__img">
+            <h3 class="portfolio__item-title">Название проекта</h3>
+            <span class="portfolio__catigoria">категория</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada  eleifend erat, ac ornare lorem placerat et. Cras fermentum est eu ligula  sit amet, consectetur adipiscing</p>
+            <a href="project.html" class="project__link">Смотреть проект</a>
+          </div>
+          <div class="portfolio__item">
+            <img src="img/port3.png" alt="" class="portfolio__img">
+            <h3 class="portfolio__item-title">Название проекта</h3>
+            <span class="portfolio__catigoria">категория</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada  eleifend erat, ac ornare lorem placerat et. Cras fermentum est eu ligula  sit amet, consectetur adipiscing</p>
+            <a href="project.html" class="project__link">Смотреть проект</a>
           </div>
         </div>
-
-        <div class="page__screen screen__second">
-          <div class="screen__content about-page">
-            <h2 class="about-page__title">Команда</h2>
-            <div class="content-column">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn <span class="accent">are lorem placerat et.</span> Cras fermentum est eu ligula vestibulum molestie. Cras tincidunt dui nunc, quis viverra n...</p>
-              <div class="numbers">
-                <div class="number">
-                  <p class="big">24</p>
-                  <p>Сотрудника</p>
-                </div>
-                <div class="number">
-                  <p class="big">3</p>
-                  <p>Года опыта</p>
-                </div>
-              </div>
-            </div>
-            <div class="content-column">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn</p>
-              <div class="numbers numbers-pad">
-                <div class="number">
-                  <p class="big">15</p>
-                  <p>реализованных проектов</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="page__screen screen__third">
-          <div class="screen__content about-page">
-            <h2 class="about-page__title">Подход</h2>
-            <div class="content-column">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn <span class="accent">are lorem placerat et.</span> Cras fermentum est eu ligula vestibulum molestie. Cras tincidunt dui nunc, quis viverra n...</p>
-              <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn <span class="bold">are lorem placerat et.</span> Cras fermentum est eu ligula.</p>
-            </div>
-            <div class="content-column">
-
-            </div>
-          </div>
-        </div>
-
-        <div class="page__screen screen__fourth">
-          <div class="screen__content about-page">
-            <h2 class="about-page__title">Мисия</h2>
-            <div class="content-column">
-              <ul class="about-page__list">
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn are lorem placerat</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn are lorem placerat</li>
-              </ul>
-            </div>
-            <div class="content-column">
-              <ul class="about-page__list">
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn are lorem placerat</li>
-              </ul>
-              <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-          </div>
+        <div class="projects__button">
+          <a href="#">Больше работ</a>
         </div>
       </div>
-      <div class="swiper-pagination menu"></div>
-    </main>
-    <footer class="about-page__footer">
-      <div class="wrapper">
-        <p class="copyright">© EQUINOX36 2017-2021 - все права защищены.</p>
+    </section>
+  </main>
+  <footer class="pages__footer">
+    <div class="wrapper">
+      <div class="pages__footer-contacts">
         <p class="contacts__item email">
           <a href="mailto:info@555in1.com">info@555in1.com</a>
         </p>
         <p class="contacts__item phone">
           <a href="tel:+380800211636">0 800 211 636</a>
-          <span class="light">Бесплатно по Украине с любого номера</span>
+            <span class="light">Бесплатно по Украине с любого номера</span>
         </p>
-        <p class="confed">Политика конфиденциальности.</p>
+        <p class="contacts__item adres">
+          Киев, ул. Голосеевская, 10
+        </p>
       </div>
-    </footer>
-    <div class="arrows">
-      <svg width="50" height="50" viewBox="0 0 50 50" fill="none" class="strelca">
-        <circle cx="25" cy="25" r="23.5" stroke-width="3"></circle>
-        <line x1="25.3804" y1="12.6941" x2="25.3804" y2="30.5896" stroke-width="3" stroke-linecap="round"></line>
-        <path d="M23.9393 38.0008C24.5251 38.5866 25.4749 38.5866 26.0607 38.0008L35.6066 28.4549C36.1924 27.8691 36.1924 26.9194 35.6066 26.3336C35.0208 25.7478 34.0711 25.7478 33.4853 26.3336L25 34.8189L16.5147 26.3336C15.9289 25.7478 14.9792 25.7478 14.3934 26.3336C13.8076 26.9194 13.8076 27.8691 14.3934 28.4549L23.9393 38.0008ZM26.5 36.1939C26.5 35.3655 25.8284 34.6939 25 34.6939C24.1716 34.6939 23.5 35.3655 23.5 36.1939L26.5 36.1939ZM26.5 36.9402L26.5 36.1939L23.5 36.1939L23.5 36.9402L26.5 36.9402Z"></path>
-      </svg>
-      <svg width="50" height="50" viewBox="0 0 50 50" fill="none" class="strelca-top">
-        <circle cx="25" cy="25" r="23.5" stroke-width="3"></circle>
-        <line x1="25.3804" y1="12.6941" x2="25.3804" y2="30.5896" stroke-width="3" stroke-linecap="round"></line>
-        <path d="M23.9393 38.0008C24.5251 38.5866 25.4749 38.5866 26.0607 38.0008L35.6066 28.4549C36.1924 27.8691 36.1924 26.9194 35.6066 26.3336C35.0208 25.7478 34.0711 25.7478 33.4853 26.3336L25 34.8189L16.5147 26.3336C15.9289 25.7478 14.9792 25.7478 14.3934 26.3336C13.8076 26.9194 13.8076 27.8691 14.3934 28.4549L23.9393 38.0008ZM26.5 36.1939C26.5 35.3655 25.8284 34.6939 25 34.6939C24.1716 34.6939 23.5 35.3655 23.5 36.1939L26.5 36.1939ZM26.5 36.9402L26.5 36.1939L23.5 36.1939L23.5 36.9402L26.5 36.9402Z"></path>
-      </svg>
+      <div class="pages__footer-text">
+        <p class="copyright">© EQUINOX36 2017-2021 - все права защищены.</p>
+        <a class="confed" href="#">Политика конфиденциальности.</a>
+      </div>
     </div>
+  </footer>
   <script src="js/jquery.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="js/about.js"></script>
+  <script src="js/pages.js"></script>
 </body>
 
 </html>

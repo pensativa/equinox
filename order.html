@@ -10,7 +10,7 @@
     <link rel="preload" href="fonts/Equinox-Regular.woff2" as="font" crossorigin="anonymous">
 </head>
 
-<body class="full-screen">
+<body>
   <div style="display:none">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-menu" viewBox="0 0 30 18">
     <line x1="2" y1="1" x2="30" y2="1" stroke-width="2"></line>
@@ -58,11 +58,11 @@
     <path d="M17.8808 7.02003L11.7642 9.70036L18.0392 10.52L18.6671 11.9742L15.119 17.0158L21.0846 14.4399L22.3904 17.464L10.8227 22.4589L9.65965 19.7652L14.5805 12.8173L6.19179 11.734L5.02871 9.04034L16.5821 4.01243L17.8808 7.02003Z"></path>
     </symbol></svg>
   </div>
-  <header class="header">
+  <header class="header pages__header order-page">
     <div class="header__wrapper wrapper">
       <div class="header__left">
         <a class="header__logo-link" href="index.html">
-          <img class="header__logo-img" src="img/logo.svg" alt="Logo EQUINOX">
+          <img class="header__logo-img" src="img/logo-menu.svg" alt="Logo EQUINOX">
         </a>
       </div>
       <div class="language">
@@ -72,7 +72,7 @@
       </div>
       <div class="header__right">
         <a class="header__phone" href="tel:+3800000000">+38 096 642 02 01</a>
-        <a class="header__contact" href="order.html">заказать</a>
+        <p class="header__contact active">заказать</p>
         <a class="header__menu" href="">
           <p class="header__burger">
             <span></span>
@@ -107,117 +107,53 @@
     </div>
     <nav class="main__nav">
       <ul class="main-nav__menu wrapper">
-        <li class="main-nav__item active">О нас</li>
+        <li class="main-nav__item"><a href="about.html">О нас</a></li>
         <li class="main-nav__item slide-link slide-7"><a href="projects.html">Портфолио</a></li>
         <li class="main-nav__item slide-link slide-8"><a href="index.html#services">Услуги</a></li>
         <li class="main-nav__item slide-link slide-9"><a href="index.html#review">Отзывы</a></li>
-        <li class="main-nav__item slide-link slide-10"><a href="contacts.html">контакты</a></li>
+        <li class="main-nav__item active">контакты</li>
       </ul>
     </nav>
   </header>
-    <main class="page">
-      <div class="page__wrapper wrapper">
-        <canvas id="lines"></canvas>
-        <div class="page__screen screen__first">
-          <div class="screen__content about-page">
-            <div class="content-column">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn <span class="accent">are lorem placerat et.</span> Cras fermentum est eu ligula vestibulum molestie. Cras tincidunt dui nunc, quis viverra n...</p>
-            </div>
-            <div class="content-column">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn <span class="underline">are lorem placerat et.</span> Cras fermentum est eu ligula vestibulum molestie. Cras tincidunt dui nunc, quis viverra n..</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="page__screen screen__second">
-          <div class="screen__content about-page">
-            <h2 class="about-page__title">Команда</h2>
-            <div class="content-column">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn <span class="accent">are lorem placerat et.</span> Cras fermentum est eu ligula vestibulum molestie. Cras tincidunt dui nunc, quis viverra n...</p>
-              <div class="numbers">
-                <div class="number">
-                  <p class="big">24</p>
-                  <p>Сотрудника</p>
+    <main class="pages__main">
+      <section id="order" class="project__order">
+        <div class="wrapper">
+          <div class="why-form why-form--page">
+            <a href="index.html" class="back">Назад</a>
+            <div class="why-form__box">
+              <h2 class="why-form__title">Заказать</h2>
+              <p class="why-form__text">Заполнив форму, вы делаете первый шаг к готовому проекту...</p>
+              <form class="form" action="post">
+                <div class="form__items">
+                  <div class="form__item form__item-on">
+                    <input id="name" class="form__input" type="text">
+                    <label for="name" class="form__label form__label-on">Имя</label>
+                  </div>
+                  <div class="form__item form__item-on">
+                    <input id="phone" class="form__input" type="text">
+                    <label for="phone" class="form__label form__label-on">Телефон</label>
+                  </div>
+                  <div class="form__item form__item-on">
+                    <input id="email" class="form__input" type="email">
+                    <label for="email" class="form__label form__label-on">Email</label>
+                  </div>
                 </div>
-                <div class="number">
-                  <p class="big">3</p>
-                  <p>Года опыта</p>
+                <div class="form__items">
+                  <div class="form__item">
+                    <label for="message" class="form__label">Опишите главную идею проекта...</label>
+                    <textarea name="message" id="message" class="form__input form__textarea" rows="8"></textarea>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="content-column">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn</p>
-              <div class="numbers numbers-pad">
-                <div class="number">
-                  <p class="big">15</p>
-                  <p>реализованных проектов</p>
-                </div>
-              </div>
+                <button class="button form__button  button--black">отправить</button>
+              </form>
             </div>
           </div>
         </div>
-
-        <div class="page__screen screen__third">
-          <div class="screen__content about-page">
-            <h2 class="about-page__title">Подход</h2>
-            <div class="content-column">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn <span class="accent">are lorem placerat et.</span> Cras fermentum est eu ligula vestibulum molestie. Cras tincidunt dui nunc, quis viverra n...</p>
-              <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn <span class="bold">are lorem placerat et.</span> Cras fermentum est eu ligula.</p>
-            </div>
-            <div class="content-column">
-
-            </div>
-          </div>
-        </div>
-
-        <div class="page__screen screen__fourth">
-          <div class="screen__content about-page">
-            <h2 class="about-page__title">Мисия</h2>
-            <div class="content-column">
-              <ul class="about-page__list">
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn are lorem placerat</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn are lorem placerat</li>
-              </ul>
-            </div>
-            <div class="content-column">
-              <ul class="about-page__list">
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada eleifend erat, ac orn are lorem placerat</li>
-              </ul>
-              <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-pagination menu"></div>
+      </section>
     </main>
-    <footer class="about-page__footer">
-      <div class="wrapper">
-        <p class="copyright">© EQUINOX36 2017-2021 - все права защищены.</p>
-        <p class="contacts__item email">
-          <a href="mailto:info@555in1.com">info@555in1.com</a>
-        </p>
-        <p class="contacts__item phone">
-          <a href="tel:+380800211636">0 800 211 636</a>
-          <span class="light">Бесплатно по Украине с любого номера</span>
-        </p>
-        <p class="confed">Политика конфиденциальности.</p>
-      </div>
-    </footer>
-    <div class="arrows">
-      <svg width="50" height="50" viewBox="0 0 50 50" fill="none" class="strelca">
-        <circle cx="25" cy="25" r="23.5" stroke-width="3"></circle>
-        <line x1="25.3804" y1="12.6941" x2="25.3804" y2="30.5896" stroke-width="3" stroke-linecap="round"></line>
-        <path d="M23.9393 38.0008C24.5251 38.5866 25.4749 38.5866 26.0607 38.0008L35.6066 28.4549C36.1924 27.8691 36.1924 26.9194 35.6066 26.3336C35.0208 25.7478 34.0711 25.7478 33.4853 26.3336L25 34.8189L16.5147 26.3336C15.9289 25.7478 14.9792 25.7478 14.3934 26.3336C13.8076 26.9194 13.8076 27.8691 14.3934 28.4549L23.9393 38.0008ZM26.5 36.1939C26.5 35.3655 25.8284 34.6939 25 34.6939C24.1716 34.6939 23.5 35.3655 23.5 36.1939L26.5 36.1939ZM26.5 36.9402L26.5 36.1939L23.5 36.1939L23.5 36.9402L26.5 36.9402Z"></path>
-      </svg>
-      <svg width="50" height="50" viewBox="0 0 50 50" fill="none" class="strelca-top">
-        <circle cx="25" cy="25" r="23.5" stroke-width="3"></circle>
-        <line x1="25.3804" y1="12.6941" x2="25.3804" y2="30.5896" stroke-width="3" stroke-linecap="round"></line>
-        <path d="M23.9393 38.0008C24.5251 38.5866 25.4749 38.5866 26.0607 38.0008L35.6066 28.4549C36.1924 27.8691 36.1924 26.9194 35.6066 26.3336C35.0208 25.7478 34.0711 25.7478 33.4853 26.3336L25 34.8189L16.5147 26.3336C15.9289 25.7478 14.9792 25.7478 14.3934 26.3336C13.8076 26.9194 13.8076 27.8691 14.3934 28.4549L23.9393 38.0008ZM26.5 36.1939C26.5 35.3655 25.8284 34.6939 25 34.6939C24.1716 34.6939 23.5 35.3655 23.5 36.1939L26.5 36.1939ZM26.5 36.9402L26.5 36.1939L23.5 36.1939L23.5 36.9402L26.5 36.9402Z"></path>
-      </svg>
-    </div>
   <script src="js/jquery.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="js/about.js"></script>
+  <script src="js/small.js"></script>
 </body>
 
 </html>

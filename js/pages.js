@@ -16,10 +16,10 @@ const projectSlider = new Swiper('.project__slider', {
 });
 
 function effect() {
-  if(window.innerWidth < 700 || window.innerHeight < 600) {
+  if(window.innerWidth < 820) {
     return 'slide';
   } else {
-    return 'card';
+    return 'cards';
   }
 }
 

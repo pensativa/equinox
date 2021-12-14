@@ -25,9 +25,8 @@ const pageSlider = new Swiper('.page', {
         nextEl: '.strelca',
         prevEl: '.strelca-top',
     },
-    mousewheel: {
-        sensitivity: 1,
-    },
+    freeMode: freeMode(),
+    mousewheel: true,
     watchOverflow: true,
     speed: 800,
     observer: true,
@@ -87,6 +86,15 @@ function effect() {
     return 'slide';
   } else {
     return 'fade';
+  }
+}
+
+//Function free Mode
+function freeMode() {
+  if(window.innerWidth < 700 || window.innerHeight < 600) {
+    return true;
+  } else {
+    return false;
   }
 }
 
