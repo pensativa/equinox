@@ -38,6 +38,10 @@
 }
 @media (max-width: 855px) {
   .full-screen .wrapper {
+    padding: 0 80px 0 20px;
+  }
+
+  .full-screen .about-page__wrapper {
     padding: 0 20px 0 75px;
   }
 }
@@ -1121,14 +1125,26 @@ template {
 
   .swiper-pagination-bullet:not(:last-of-type) {
     padding-bottom: 30px;
-    background: url(../img/lines.svg) no-repeat bottom 0 left/auto 20px;
+    background: url("../img/lines.svg") no-repeat bottom 0 left/auto 20px;
   }
 }
 @media (max-width: 855px) {
+  .full-screen--main .menu {
+    right: 0;
+  }
+
+  .full-screen--main .menu__link {
+    font-size: 9px;
+    width: 50px;
+    text-align: left;
+  }
+
   .menu__link.active,
 .menu__link:active,
 .menu__link:hover {
-    width: 62px;
+    width: 60px;
+    border-width: 2px;
+    font-weight: 900;
   }
 }
 .home {
@@ -1229,6 +1245,15 @@ template {
           backface-visibility: hidden;
 }
 
+@media (max-width: 855px) {
+  .home_content-title {
+    font-size: 30px;
+  }
+
+  .home_content-box li {
+    font-size: 12px;
+  }
+}
 .language {
   position: fixed;
   right: 2%;
@@ -1778,6 +1803,63 @@ template {
 
   .about2__left {
     background-color: #e35d14;
+  }
+}
+@media (max-width: 855px) {
+  .about__content-text {
+    margin-left: 0;
+  }
+
+  .about2__img {
+    display: none;
+  }
+
+  .about2__left,
+.about2_right {
+    background-image: none;
+    padding-top: 0;
+    margin: 20px 0 0;
+    position: relative;
+  }
+
+  .about2__left::after {
+    content: "";
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    -webkit-transform: none;
+            transform: none;
+    z-index: -1;
+    background-color: #e35d14;
+  }
+
+  .about2__left-text,
+.about2_right-text {
+    margin: 0;
+    padding: 20px 0 20px;
+    border-bottom: 1px solid #000;
+    font-size: 15px;
+  }
+
+  .about2__left-box {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .about2__left .about2_left-left,
+.about2__left .about2_left-right {
+    width: 100%;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .about2_left-left li,
+.about2_left-right li,
+.about2_right-left li,
+.about2_right-right li {
+    padding: 5px 0 0;
   }
 }
 .why__box {

@@ -32,11 +32,7 @@ let pageSlider = new Swiper('.page', {
     observer: true,
     observeParents: true,
     observeSlideChildren: true,
-    // scrollbar: {
-    //     el: '.page__scroll',
-    //     bragClass: "page__drag-scroll",
-    //     draggable: true,
-    // }
+    freeMode: freeMode(),
     init: false,
     on: {
         init: function () {
@@ -117,7 +113,7 @@ function menuSlider() {
       }
     });
   }
-
+//nested: true
   //To top
   const toTop = document.querySelector('.top');
   if (pageSlider.realIndex === 10) {
@@ -162,6 +158,15 @@ function effect() {
     return 'slide';
   } else {
     return 'fade';
+  }
+}
+
+//Function free Mode
+function freeMode() {
+  if(window.innerWidth < 700 || window.innerHeight < 600) {
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -267,6 +272,18 @@ pageSlider.init();
       $(this).addClass('open');
     }
   });
+
+  //Mobile version
+  if(window.innerWidth < 855) {
+    $('.about2_left-right').children().removeAttr('style');
+    $('.about2_left-left').children().removeAttr('style');
+    $('.about2__left-text').children().removeAttr('style');
+    $('.about2_right-text').children().removeAttr('style');
+    $('.about2_right-right').children().removeAttr('style');
+    $('.about2_right-left').children().removeAttr('style');
+    $('.about2_right-text').children('br').remove();
+    $('.about2__left-text').children('br').remove();
+  }
 
   //test animejs
   function fitElementToParent(el, padding) {
