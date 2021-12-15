@@ -672,7 +672,7 @@ template {
 }
 @media (max-width: 700px), (max-height: 600px) {
   .page__screen {
-    min-height: 100%;
+    height: 100%;
   }
 }
 .header {
@@ -917,7 +917,7 @@ template {
   .header::after {
     content: "";
     width: 100%;
-    height: 100%;
+    height: 90%;
     position: absolute;
     top: 0;
     left: 0;
@@ -2802,6 +2802,12 @@ template {
     width: 300px;
   }
 }
+@media (max-width: 700px), (max-height: 900) {
+  .portfolio__slider {
+    width: 100%;
+    height: 100%;
+  }
+}
 .services__title {
   text-transform: uppercase;
   margin-left: 0;
@@ -3024,6 +3030,7 @@ template {
 
   .review__button {
     margin-left: 0;
+    margin-top: 10px;
   }
 }
 .contacts__title {
@@ -3420,6 +3427,11 @@ template {
   top: -35px;
 }
 
+.about_page {
+  background: transparent;
+  z-index: 2;
+}
+
 #video-bg {
   position: fixed;
   top: 0;
@@ -3428,20 +3440,28 @@ template {
   left: 0;
   overflow: hidden;
   z-index: 1;
-  background: #000;
-  background-size: cover;
 }
 
 #video-bg > video {
   position: absolute;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
 }
 
+@media (min-aspect-ratio: 16/9) {
+  #video-bg > video {
+    height: 300%;
+    top: -100%;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  #video-bg > video {
+    width: 300%;
+    left: -100%;
+  }
+}
 @supports ((-o-object-fit: cover) or (object-fit: cover)) {
   #video-bg > video {
     top: 0;

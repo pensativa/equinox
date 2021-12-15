@@ -110,7 +110,7 @@ function menuSlider() {
       }
     });
   }
-//nested: true
+
   //To top
   const toTop = document.querySelector('.top');
   if (pageSlider.realIndex === 10) {
@@ -159,6 +159,20 @@ function freeMode() {
 }
 
 pageSlider.init();
+
+//Portfolio slider
+  let portfolioSlider = new Swiper('.portfolio__slider', {
+    // Свои классы
+    wrapperClass: "portfolio__list",
+    slideClass: "portfolio__item",
+    grabCursor: true,
+    init: false,
+    nested: true,
+  });
+
+if(window.innerWidth < 700 || window.innerHeight < 900) {
+  portfolioSlider.init();
+}
 
   //Menu
   $('.header__menu').on('click', function(e) {
