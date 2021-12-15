@@ -116,7 +116,12 @@
     </nav>
   </header>
     <main class="page">
-      <canvas id="lines"></canvas>
+      <!--<canvas id="lines"></canvas>-->
+      <div id="video-bg" class="video-bg">
+        <video width="100%" height="auto" autoplay="autoplay" loop="loop">
+          <source src="video/smoke.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="page__wrapper wrapper about-page__wrapper">
         <div class="page__screen screen__first">
           <div class="screen__content about-page">
@@ -215,6 +220,40 @@
         <path d="M23.9393 38.0008C24.5251 38.5866 25.4749 38.5866 26.0607 38.0008L35.6066 28.4549C36.1924 27.8691 36.1924 26.9194 35.6066 26.3336C35.0208 25.7478 34.0711 25.7478 33.4853 26.3336L25 34.8189L16.5147 26.3336C15.9289 25.7478 14.9792 25.7478 14.3934 26.3336C13.8076 26.9194 13.8076 27.8691 14.3934 28.4549L23.9393 38.0008ZM26.5 36.1939C26.5 35.3655 25.8284 34.6939 25 34.6939C24.1716 34.6939 23.5 35.3655 23.5 36.1939L26.5 36.1939ZM26.5 36.9402L26.5 36.1939L23.5 36.1939L23.5 36.9402L26.5 36.9402Z"></path>
       </svg>
     </div>
+    <section class="project__order about-popap">
+      <div class="wrapper">
+        <div class="why-form why-form--page">
+          <a href="index.html" class="back close">Назад</a>
+          <div class="why-form__box">
+            <h2 class="why-form__title">Заказать</h2>
+            <p class="why-form__text">Заполнив форму, вы делаете первый шаг к готовому проекту...</p>
+            <form class="form" action="post">
+              <div class="form__items">
+                <div class="form__item form__item-on">
+                  <input id="name" class="form__input" type="text">
+                  <label for="name" class="form__label form__label-on">Имя</label>
+                </div>
+                <div class="form__item form__item-on">
+                  <input id="phone" class="form__input" type="text">
+                  <label for="phone" class="form__label form__label-on">Телефон</label>
+                </div>
+                <div class="form__item form__item-on">
+                  <input id="email" class="form__input" type="email">
+                  <label for="email" class="form__label form__label-on">Email</label>
+                </div>
+              </div>
+              <div class="form__items">
+                <div class="form__item">
+                  <label for="message" class="form__label">Опишите главную идею проекта...</label>
+                  <textarea name="message" id="message" class="form__input form__textarea" rows="8"></textarea>
+                </div>
+              </div>
+              <button class="button form__button  button--black">отправить</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   <script src="js/jquery.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="js/about.js"></script>

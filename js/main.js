@@ -13,10 +13,7 @@ let pageSlider = new Swiper('.page', {
     slidesPerView: 'auto',
 
     //Эффект переключение слайдов
-    effect: effect(),
-    edeEffect: {
-      crossFade: true
-    },
+    effect: 'fade',
     keyboard: {
         onlyInViewport: true,
         pageUpDown: true,
@@ -32,7 +29,7 @@ let pageSlider = new Swiper('.page', {
     observer: true,
     observeParents: true,
     observeSlideChildren: true,
-    freeMode: freeMode(),
+    //freeMode: freeMode(),
     init: false,
     on: {
         init: function () {
@@ -149,15 +146,6 @@ function addClassForSocialRound() {
     socialRound.classList.add('out');
   } else {
     socialRound.classList.remove('out');
-  }
-}
-
-//Type effect
-function effect() {
-  if(window.innerWidth < 855 || window.innerHeight < 800) {
-    return 'slide';
-  } else {
-    return 'fade';
   }
 }
 
@@ -304,7 +292,7 @@ pageSlider.init();
 
 var sphereAnimation = (function() {
 
-  var sphereEl = document.querySelector('.sphere-animation');
+  var sphereEl = document.querySelector('.sphere-bottom');
   var spherePathEls = sphereEl.querySelectorAll('.sphere path');
   var pathLength = spherePathEls.length;
   var hasStarted = false;
@@ -371,6 +359,155 @@ var sphereAnimation = (function() {
   init();
 
 })();
+
+var sphereAnimation = (function() {
+
+  var sphereEl = document.querySelector('.sphere-top');
+  var spherePathEls = sphereEl.querySelectorAll('.sphere path');
+  var pathLength = spherePathEls.length;
+  var hasStarted = false;
+  var aimations = [];
+
+  fitElementToParent(sphereEl);
+
+  var breathAnimation = anime({
+    begin: function() {
+      for (var i = 0; i < pathLength; i++) {
+        aimations.push(anime({
+          targets: spherePathEls[i],
+          stroke: {value: ['rgba(255,75,75,1)', 'rgba(80,80,80,.35)'], duration: 500},
+          translateX: [2, -4],
+          translateY: [2, -4],
+          easing: 'easeOutQuad',
+          autoplay: false
+        }));
+      }
+    },
+    update: function(ins) {
+      aimations.forEach(function(animation, i) {
+        var percent = (1 - Math.sin((i * .35) + (.0022 * ins.currentTime))) / 2;
+        animation.seek(animation.duration * percent);
+      });
+    },
+    duration: Infinity,
+    autoplay: false
+  });
+
+  var introAnimation = anime.timeline({
+    autoplay: false
+  })
+  .add({
+    targets: spherePathEls,
+    strokeDashoffset: {
+      value: [anime.setDashoffset, 0],
+      duration: 3900,
+      easing: 'easeInOutCirc',
+      delay: anime.stagger(190, {direction: 'reverse'})
+    },
+    duration: 2000,
+    delay: anime.stagger(60, {direction: 'reverse'}),
+    easing: 'linear'
+  }, 0);
+
+  var shadowAnimation = anime({
+      targets: '#sphereGradient',
+      x1: '25%',
+      x2: '25%',
+      y1: '0%',
+      y2: '75%',
+      duration: 30000,
+      easing: 'easeOutQuint',
+      autoplay: false
+    }, 0);
+
+  function init() {
+    introAnimation.play();
+    breathAnimation.play();
+    shadowAnimation.play();
+  }
+
+  init();
+
+})();
+
+anime.timeline({
+  loop: true,
+})
+.add({
+  targets: '.glitch',
+  duration: 100,
+  skewX: 70,
+  easing: 'easeInOutQuad',
+})
+.add({
+  targets: '.glitch',
+  duration: 30,
+  skewX: 0,
+  easing: 'easeInOutQuad',
+})
+.add({
+  targets: '.glitch',
+  duration: 30,
+  opacity: 0,
+  easing: 'linear',
+})
+.add({
+  targets: '.glitch',
+  duration: 30,
+  opacity: 1,
+  easing: 'linear',
+})
+.add({
+  targets: '.glitch',
+  duration: 30,
+  translateX: -60,
+  easing: 'linear',
+})
+.add({
+  targets: '.glitch',
+  duration: 30,
+  translateX: 60,
+  easing: 'linear',
+})
+.add({
+  targets: '.sphere-top',
+  duration: 80,
+  translateX: -14,
+  easing: 'easeInOutQuad',
+})
+.add({
+  targets: '.sphere-bottom',
+  duration: 80,
+  translateX: 14,
+  easing: 'easeInOutQuad',
+}, '-=80')
+.add({
+  targets: '.sphere-top',
+  duration: 80,
+  translateX: 0,
+  easing: 'easeInOutQuad',
+})
+.add({
+  targets: '.sphere-bottom',
+  duration: 80,
+  translateX: 0,
+  easing: 'easeInOutQuad',
+}, '-=80')
+.add({
+  targets: '.glitch',
+  duration: 40,
+  scaleY: 1.2,
+  easing: 'easeInOutQuad',
+}, '+=800')
+.add({
+  targets: '.glitch',
+  duration: 20,
+  scaleY: 1,
+  easing: 'easeInOutQuad',
+})
+.add({
+  duration: 2000,
+})
 
 
 }(jQuery));
