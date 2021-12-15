@@ -40,6 +40,7 @@ let pageSlider = new Swiper('.page', {
             menuSlederRemove ();
             addClassForSocialRound();
             menuSlider();
+            reviewHide();
             setTimeout(deleteHash, 1000);
             menuLinks[pageSlider.realIndex].classList.add('active');
         },
@@ -158,6 +159,15 @@ function freeMode() {
   }
 }
 
+//Function for review
+
+function reviewHide() {
+  const reviews = document.querySelector('.review__list');
+  if (pageSlider.realIndex !== 9) {
+    reviews.classList.remove('open');
+  }
+}
+
 pageSlider.init();
 
 //Portfolio slider
@@ -273,6 +283,11 @@ if(window.innerWidth < 700 || window.innerHeight < 900) {
       $(this).children('ul').slideDown(500);
       $(this).addClass('open');
     }
+  });
+
+  //Reviews
+  $('.review__button').on('click', function() {
+      $('.review__list').addClass('open');
   });
 
   //Mobile version

@@ -13,7 +13,7 @@ const pageSlider = new Swiper('.page', {
     slidesPerView: 'auto',
 
     //Эффект плавного переключение между слайдами
-    effect: effect(),
+    effect: 'fade',
     edeEffect: {
       crossFade: true
     },
@@ -80,14 +80,6 @@ function bigLogo() {
 
 }
 
-//Type effect
-function effect() {
-  if(window.innerWidth < 700 || window.innerHeight < 600) {
-    return 'slide';
-  } else {
-    return 'fade';
-  }
-}
 
 //Function free Mode
 function freeMode() {

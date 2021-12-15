@@ -922,7 +922,6 @@ template {
     top: 0;
     left: 0;
     z-index: -1;
-    background: #000;
   }
 
   .header.open::after,
@@ -1867,6 +1866,7 @@ template {
     padding-top: 0;
     margin: 20px 0 0;
     position: relative;
+    padding-bottom: 10px;
   }
 
   .about2__left::after {
@@ -1885,9 +1885,14 @@ template {
   .about2__left-text,
 .about2_right-text {
     margin: 0;
-    padding: 20px 0 20px;
+    padding: 20px 0;
     border-bottom: 1px solid #000;
     font-size: 15px;
+  }
+
+  .about2_right-text {
+    padding-top: 0;
+    border-color: #fff;
   }
 
   .about2__left-box,
@@ -2411,7 +2416,7 @@ template {
   .why-issues__text {
     width: 100%;
     margin-top: 20px;
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 #order.fix {
@@ -2806,6 +2811,20 @@ template {
   .portfolio__slider {
     width: 100%;
     height: 100%;
+    overflow: hidden;
+  }
+
+  .portfolio__list {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    width: 200%;
+  }
+
+  .portfolio__item {
+    width: 100% !important;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
   }
 }
 .services__title {
@@ -2957,10 +2976,23 @@ template {
   opacity: 0;
   -webkit-transform: translateY(50vh);
           transform: translateY(50vh);
+  max-width: 1000px;
 }
 
 .review__item {
   margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+.review__item--more {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.8s;
+  transition: height 0.8s;
+}
+
+.review__list.open .review__item--more {
+  height: auto;
 }
 
 .review__button {
