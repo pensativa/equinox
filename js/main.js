@@ -170,6 +170,13 @@ function reviewHide() {
 
 pageSlider.init();
 
+
+
+window.addEventListener('resize',function(){
+  alert('Размеры окна изменились');
+});
+
+
 //Portfolio slider
   let portfolioSlider = new Swiper('.portfolio__slider', {
     // Свои классы
@@ -177,7 +184,7 @@ pageSlider.init();
     slideClass: "portfolio__item",
     grabCursor: true,
     init: false,
-    nested: true,
+    //nested: true,
   });
 
 if(window.innerWidth < 700 || window.innerHeight < 900) {

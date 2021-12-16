@@ -672,12 +672,15 @@ template {
   }
 
   .screen__content {
-    padding: 95px 0 0;
+    padding: 105px 0 0;
   }
 }
 @media (max-width: 700px), (max-height: 600px) {
-  .page__screen {
+  /*.page__screen{
     height: 100%;
+  }*/
+  .full-screen {
+    height: auto;
   }
 }
 .header {
@@ -1930,6 +1933,10 @@ template {
     height: 50px;
   }
 
+  .swiper-slide-active .about3__title::before {
+    height: 0;
+  }
+
   .about3__p-bottom,
 .about3__p-top {
     font-size: 13px;
@@ -2733,15 +2740,15 @@ template {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 50%;
+  top: 60%;
   left: 50%;
   margin-top: -50%;
   margin-left: -50%;
   display: inline-block;
   border: 1px solid transparent;
   z-index: 5;
-  -webkit-transform: scale(0.1);
-          transform: scale(0.1);
+  -webkit-transform: scale(0);
+          transform: scale(0);
   -webkit-transition: 0.8s;
   transition: 0.8s;
 }
@@ -2823,23 +2830,13 @@ template {
   }
 }
 @media (max-width: 700px), (max-height: 700) {
-  .portfolio__slider {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
   .portfolio__list {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    width: 200%;
   }
 
   .portfolio__item {
-    width: 100% !important;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
+    width: auto;
   }
 }
 .services__title {
@@ -3001,6 +2998,7 @@ template {
 
 .review__item--more {
   opacity: 0;
+  height: 0;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
   -webkit-transition: 0.8s;
@@ -3009,6 +3007,7 @@ template {
 
 .review__list.open .review__item--more {
   opacity: 1;
+  height: auto;
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
@@ -3016,13 +3015,6 @@ template {
 .review__button {
   margin-left: 15%;
   opacity: 0;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-}
-
-.review__list.open ~ .review__button {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
 }
 
 .swiper-slide-active .review__box::after {
@@ -3080,7 +3072,7 @@ template {
   .review__item img {
     width: 100%;
   }
-  .review__item:nth-of-type(5) {
+  .review__item:nth-child(5) {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }
