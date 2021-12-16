@@ -171,12 +171,6 @@ function reviewHide() {
 pageSlider.init();
 
 
-
-window.addEventListener('resize',function(){
-  alert('Размеры окна изменились');
-});
-
-
 //Portfolio slider
   let portfolioSlider = new Swiper('.portfolio__slider', {
     // Свои классы
