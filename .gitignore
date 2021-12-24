@@ -10,6 +10,7 @@ node_modules/
 npm-debug.*
 build/
 Reserv/
+video/
 res/
 source/
 Thumbs.db

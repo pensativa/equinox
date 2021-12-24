@@ -1,6 +1,4 @@
 (function($) {
-let wrapper = document.querySelector('.page__wrapper');
-
 let pageSlider = new Swiper('.page', {
     // Свои классы
     wrapperClass: "page__wrapper",
@@ -10,10 +8,13 @@ let pageSlider = new Swiper('.page', {
     direction: 'vertical',
 
     // Количество слайдов для показа
-    slidesPerView: 'auto',
+    //slidesPerView: 'auto',
 
     //Эффект переключение слайдов
     effect: 'fade',
+    fadeEffect: {
+      crossFade: true,
+    },
     keyboard: {
         onlyInViewport: true,
         pageUpDown: true,
@@ -21,16 +22,9 @@ let pageSlider = new Swiper('.page', {
     navigation: {
         nextEl: '.strelca',
     },
-    mousewheel: {
-        sensitivity: 1,
-    },
+    mousewheel: true,
+    simulateTouch: false,
     speed: 800,
-    touchRatio: 0,
-    observer: true,
-    observeParents: true,
-    observeSlideChildren: true,
-    //preventInteractionOnTransition: true,
-    //updateOnWindowResize: true,
     //freeMode: freeMode(),
     init: false,
     on: {
@@ -43,10 +37,12 @@ let pageSlider = new Swiper('.page', {
             addClassForSocialRound();
             menuSlider();
             reviewHide();
-            setTimeout(deleteHash, 1000);
+            setTimeout(deleteHash, 100);
             menuLinks[pageSlider.realIndex].classList.add('active');
         },
-        
+        resize: function () {
+
+        },
     },
 });
 
@@ -245,7 +241,7 @@ pageSlider.init();
           pageSlider.slideTo(6, 0.3);
         });
 
-  //About animation
+  //About video
   $('.about-video').on('click', function(e) {
     e.preventDefault();
     $('.video-popap').fadeIn(500);
@@ -253,6 +249,9 @@ pageSlider.init();
 
   $('.video-popap').on('click', function(e) {
     e.preventDefault();
+    const video = document.querySelector('.video');
+    video.pause();
+    video.currentTime = 0;
     $('.video-popap').fadeOut(500);
   });
 
