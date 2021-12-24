@@ -24,11 +24,13 @@ let pageSlider = new Swiper('.page', {
     mousewheel: {
         sensitivity: 1,
     },
-    watchOverflow: true,
     speed: 800,
+    touchRatio: 0,
     observer: true,
     observeParents: true,
     observeSlideChildren: true,
+    //preventInteractionOnTransition: true,
+    //updateOnWindowResize: true,
     //freeMode: freeMode(),
     init: false,
     on: {
@@ -170,21 +172,6 @@ function reviewHide() {
 
 pageSlider.init();
 
-
-//Portfolio slider
-  let portfolioSlider = new Swiper('.portfolio__slider', {
-    // Свои классы
-    wrapperClass: "portfolio__list",
-    slideClass: "portfolio__item",
-    grabCursor: true,
-    init: false,
-    //nested: true,
-  });
-
-if(window.innerWidth < 700 || window.innerHeight < 900) {
-  portfolioSlider.init();
-}
-
   //Menu
   $('.header__menu').on('click', function(e) {
     e.preventDefault();
@@ -258,6 +245,17 @@ if(window.innerWidth < 700 || window.innerHeight < 900) {
           pageSlider.slideTo(6, 0.3);
         });
 
+  //About animation
+  $('.about-video').on('click', function(e) {
+    e.preventDefault();
+    $('.video-popap').fadeIn(500);
+  });
+
+  $('.video-popap').on('click', function(e) {
+    e.preventDefault();
+    $('.video-popap').fadeOut(500);
+  });
+
   //Vacations popap
   $('.about3__form').on('click', function() {
     $('.modal').fadeIn(500);
@@ -287,21 +285,10 @@ if(window.innerWidth < 700 || window.innerHeight < 900) {
   });
 
   //Reviews
-  $('.review__button').on('click', function() {
-      $('.review__list').addClass('open');
+  $('.review__button').on('click', function(e) {
+    e.preventDefault();
+    $('.review__list').addClass('open');
   });
-
-  //Mobile version
-  if(window.innerWidth < 855) {
-    $('.about2_left-right').children().removeAttr('style');
-    $('.about2_left-left').children().removeAttr('style');
-    $('.about2__left-text').children().removeAttr('style');
-    $('.about2_right-text').children().removeAttr('style');
-    $('.about2_right-right').children().removeAttr('style');
-    $('.about2_right-left').children().removeAttr('style');
-    $('.about2_right-text').children('br').remove();
-    $('.about2__left-text').children('br').remove();
-  }
 
   //test animejs
   function fitElementToParent(el, padding) {
