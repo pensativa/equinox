@@ -2823,12 +2823,9 @@ template {
   font-weight: bold;
   font-size: 4vh;
   margin: 23px 0 36px;
-  -webkit-transition: 1.8s;
-  transition: 1.8s;
-  -webkit-transition-delay: 1.6s;
-          transition-delay: 1.6s;
-  height: 0;
-  opacity: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  visibility: hidden;
 }
 .why__items {
   display: -webkit-box;
@@ -2840,12 +2837,9 @@ template {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-transition: 1.8s;
-  transition: 1.8s;
-  -webkit-transition-delay: 1.6s;
-          transition-delay: 1.6s;
-  height: 0;
-  opacity: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  visibility: hidden;
 }
 .why__item {
   font-style: normal;
@@ -2875,8 +2869,11 @@ template {
 
 .swiper-slide-active .why__title,
 .swiper-slide-active .why__items {
-  opacity: 1;
-  height: auto;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: 1s ease 1.3s;
+  transition: 1s ease 1.3s;
 }
 
 .why-issues .why__box {
@@ -3536,6 +3533,7 @@ template {
   position: relative;
   padding-bottom: 15px;
   text-align: center;
+  margin-bottom: 1vh;
 }
 .portfolio__item:hover .portfolio__link, .portfolio__item:focus .portfolio__link {
   border-color: #e35d14;
@@ -3551,10 +3549,8 @@ template {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 60%;
-  left: 50%;
-  margin-top: -50%;
-  margin-left: -50%;
+  top: 0;
+  left: 0;
   display: inline-block;
   border: 1px solid transparent;
   z-index: 5;
@@ -5036,7 +5032,7 @@ template {
 }
 
 .project__order.about-popap {
-  background: url("../img/order.png") no-repeat right center/auto 100%;
+  background: #fff url("../img/order.png") no-repeat right center/auto 100%;
 }
 
 .pages__footer {
