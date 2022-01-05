@@ -53,6 +53,7 @@ const pageSlider = new Swiper('.project__page-slider', {
   scrollbar: {
     el: ".swiper-scrollbar",
     hide: false,
+    draggable: true,
   },
 });
 

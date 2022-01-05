@@ -242,18 +242,36 @@ pageSlider.init();
         });
 
   //About video
+  const video = document.querySelector('.video');
   $('.about-video').on('click', function(e) {
     e.preventDefault();
-    $('.video-popap').fadeIn(500);
+    if ($('.about-video').hasClass('open')) {
+      video.pause();
+      video.currentTime = 0;
+      $('.video-popap').fadeOut(500);
+      $('.video-overlay').fadeOut(500);
+      $('.about-video').removeClass('open');
+    } else {
+      video.play();
+      $('.about-video').addClass('open');
+      $('.video-popap').fadeIn(500);
+      $('.video-overlay').fadeIn(500);
+    }
   });
 
-  $('.video-popap').on('click', function(e) {
+  $('.video-overlay').on('click', function(e) {
     e.preventDefault();
-    const video = document.querySelector('.video');
     video.pause();
     video.currentTime = 0;
     $('.video-popap').fadeOut(500);
+    $('.video-overlay').fadeOut(500);
+    $('.about-video').removeClass('open');
   });
+
+  /*$('.video-popap').on('click', function(e) {
+    e.preventDefault();
+
+  });*/
 
   //Vacations popap
   $('.about3__form').on('click', function() {

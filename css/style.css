@@ -1197,7 +1197,7 @@ template {
 
   .full-screen--main .menu__link {
     font-size: 9px;
-    width: 50px;
+    width: 60px;
     text-align: left;
   }
 
@@ -5537,7 +5537,7 @@ template {
 .about-video {
   position: fixed;
   z-index: 5;
-  top: 160px;
+  bottom: 5%;
   left: 5%;
   width: 60px;
   color: #e35d14;
@@ -5563,16 +5563,43 @@ template {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
+.about-video.open {
+  z-index: 16;
+  bottom: auto;
+  left: auto;
+  top: 5%;
+  right: 5%;
+  font-size: 0;
+}
+.about-video.open::after {
+  content: "close";
+  color: #e35d14;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 900;
+  -webkit-text-stroke: 1px #e35d14;
+  -webkit-text-fill-color: #000;
+  -ms-color: #000;
+  -ms-text-shadow: -1px -1px 0 #e35d14, 1px -1px 0 #e35d14, -1px 1px 0 #e35d14, 1px 1px 0 #e35d14;
+  -webkit-animation: pulse 2s linear infinite;
+          animation: pulse 2s linear infinite;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.about-video.open img {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 .video-popap {
   display: none;
   position: fixed;
-  z-index: 100;
+  z-index: 15;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
 }
 .video-popap video {
   max-width: 100%;
@@ -5584,6 +5611,17 @@ template {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.video-overlay {
+  display: none;
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 @-webkit-keyframes pulse {
@@ -5634,6 +5672,13 @@ template {
   .about-video img {
     width: 36px;
     height: 36px;
+  }
+  .about-video.open {
+    top: 150px;
+    right: 30px;
+  }
+  .about-video.open::after {
+    font-size: 14px;
   }
 
   @-webkit-keyframes pulse {
