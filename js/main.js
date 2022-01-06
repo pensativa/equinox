@@ -148,15 +148,6 @@ function addClassForSocialRound() {
   }
 }
 
-//Function free Mode
-function freeMode() {
-  if(window.innerWidth < 700 || window.innerHeight < 600) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
 //Function for review
 
 function reviewHide() {
