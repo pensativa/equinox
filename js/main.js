@@ -51,23 +51,19 @@ let pageSlider = new Swiper('.page', {
 function hashGoToSlide() {
   const hash = window.location.hash;
   if (hash === '#portfolio') {
-    pageSlider.slideTo(7, 0);
+    pageSlider.slideTo(6, 0);
   }
 
   if(hash === '#services') {
-    pageSlider.slideTo(8, 0);
+    pageSlider.slideTo(7, 0);
   }
 
   if(hash === '#review') {
-    pageSlider.slideTo(9, 0);
+    pageSlider.slideTo(8, 0);
   }
 
   if(hash === '#contacts') {
-    pageSlider.slideTo(10, 0);
-  }
-
-  if(hash === '#order') {
-    pageSlider.slideTo(6, 0);
+    pageSlider.slideTo(9, 0);
   }
 }
 
@@ -152,7 +148,7 @@ function addClassForSocialRound() {
 
 function reviewHide() {
   const reviews = document.querySelector('.review__list');
-  if (pageSlider.realIndex !== 9) {
+  if (pageSlider.realIndex !== 8) {
     reviews.classList.remove('open');
   }
 }
@@ -195,19 +191,19 @@ pageSlider.init();
     }, 100);
 
     if($(this).hasClass('slide-7')) {
-      pageSlider.slideTo(7, 0);
+      pageSlider.slideTo(6, 0);
     }
 
     if($(this).hasClass('slide-8')) {
-      pageSlider.slideTo(8, 0);
+      pageSlider.slideTo(7, 0);
     }
 
     if($(this).hasClass('slide-9')) {
-      pageSlider.slideTo(9, 0);
+      pageSlider.slideTo(8, 0);
     }
 
     if($(this).hasClass('slide-10')) {
-      pageSlider.slideTo(10, 0);
+      pageSlider.slideTo(9, 0);
     }
 
     if($(this).hasClass('slide-link')) {
@@ -225,12 +221,29 @@ pageSlider.init();
   });
 
   //Callback
-  document
-        .querySelector('.header__contact')
-        .addEventListener('click', function (e) {
-          e.preventDefault();
-          pageSlider.slideTo(6, 0.3);
-        });
+  $('.header__contact').on('click', function(e) {
+    e.preventDefault();
+    if ($('.main__nav').hasClass('open')) {
+      $('.main__nav').removeClass('open');
+      $('.header__menu').removeClass('open');
+    }
+    $('.header').addClass('open');
+    $('.about-popap').addClass('open');
+    setTimeout(function(){
+      $('.header__logo-img').attr('src', 'img/logo-menu.svg');
+    }, 400);
+    $('.strelca-top').css('z-index', '1');
+  });
+
+  $('.back.close').on('click', function(e) {
+    e.preventDefault();
+    $('.about-popap').removeClass('open');
+    $('.header').removeClass('open');
+    setTimeout(function(){
+      $('.header__logo-img').attr('src', 'img/logo.svg');
+    }, 100);
+    $('.strelca-top').removeAttr('style');
+  });
 
   //About video
   const video = document.querySelector('.video');

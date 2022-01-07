@@ -25,7 +25,6 @@ const pageSlider = new Swiper('.page', {
         nextEl: '.strelca',
         prevEl: '.strelca-top',
     },
-    //freeMode: freeMode(),
     mousewheel: true,
     watchOverflow: true,
     speed: 800,
@@ -78,16 +77,6 @@ function bigLogo() {
     logo.style.transform = 'scale(1)';
   }
 
-}
-
-
-//Function free Mode
-function freeMode() {
-  if(window.innerWidth < 700 || window.innerHeight < 600) {
-    return true;
-  } else {
-    return false;
-  }
 }
 
 pageSlider.init();
@@ -355,4 +344,13 @@ pageSlider.init();
 }(jQuery));
 
 
+document.addEventListener("DOMContentLoaded", function() {
+
+  //Video for IOS
+  const video = document.querySelector('#video-bg video');
+  if (video.paused) {
+    video.play();
+  }
+
+});
 

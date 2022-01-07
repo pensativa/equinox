@@ -731,6 +731,7 @@ template {
   transition: -webkit-transform 0.8s ease-in-out;
   transition: transform 0.8s ease-in-out;
   transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
+  width: 186px;
 }
 
 .pages__header {
@@ -3597,6 +3598,12 @@ template {
   margin-top: 0;
 }
 
+.portfolio__button--about .button {
+  margin-top: 3vh;
+  max-width: 80%;
+  width: 100%;
+}
+
 .portfolio__title {
   -webkit-transition: opacity 1s ease-out 1s;
   transition: opacity 1s ease-out 1s;
@@ -4568,7 +4575,7 @@ template {
 }
 
 .numbers-pad {
-  padding-top: 8vh;
+  padding-top: 40px;
 }
 
 .screen__third .about-page__title {
@@ -4690,7 +4697,7 @@ template {
 .about-popap.project__order.open {
   -webkit-transform: translateX(0);
           transform: translateX(0);
-  z-index: 2;
+  z-index: 8;
 }
 
 .about-popap.project__order .back {
@@ -4742,6 +4749,21 @@ template {
        object-fit: cover;
   }
 }
+.about-page__buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.about-page__buttons .button {
+  margin-top: 3vh;
+}
+
 @media (max-width: 1050px) {
   .about-page__footer .wrapper {
     -ms-flex-wrap: wrap;
@@ -4779,6 +4801,12 @@ template {
         -ms-flex-pack: center;
             justify-content: center;
     height: auto;
+  }
+
+  .about-page__buttons .button {
+    margin-top: 10px;
+    font-size: 13px;
+    padding: 12px 10px 13px;
   }
 
   #lines {
