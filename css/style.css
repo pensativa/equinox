@@ -2303,10 +2303,7 @@ template {
   }
 
   .about_bg {
-    right: 0;
-    top: auto;
-    bottom: -50px;
-    text-align: center;
+    display: none;
   }
 
   .fly {

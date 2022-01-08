@@ -85,7 +85,7 @@ function menuSlider() {
   if (pageSlider.realIndex > 0 && pageSlider.realIndex < 4) {
     menuSlederRemove();
     menuLinks[1].classList.add('active');
-  } else if (pageSlider.realIndex > 3 && pageSlider.realIndex < 7) {
+  } else if (pageSlider.realIndex > 3 && pageSlider.realIndex < 6) {
     menuSlederRemove();
     menuLinks[4].classList.add('active');
   } else {
