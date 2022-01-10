@@ -60,7 +60,7 @@ const aboutSlider = new Swiper('.page', {
 function showContacts() {
   const phone = document.querySelector('.about-page__footer .phone');
   const email = document.querySelector('.about-page__footer .email');
-  if (pageSlider.realIndex === 3) {
+  if (aboutSlider.realIndex === 3) {
     if(window.innerWidth < 700 || window.innerHeight < 600) {
       phone.style.transform = 'translateY(0)';
       email.style.transform = 'translateY(0)';
@@ -77,7 +77,7 @@ function showContacts() {
 
 function bigLogo() {
   const logo = document.querySelector('.header__logo-img');
-  if (pageSlider.realIndex === 0) {
+  if (aboutSlider.realIndex === 0) {
     logo.style.transform = 'scale(1.3)';
   } else {
     logo.style.transform = 'scale(1)';

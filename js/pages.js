@@ -93,26 +93,6 @@ const pageSlider = new Swiper('.project__page-slider', {
     }, 100);
   });
 
-  //Callback
-  $('.header__contact').on('click', function(e) {
-    e.preventDefault();
-    $('.header__contact').addClass('open');
-    if ($('.main__nav').hasClass('open')) {
-      $('.main__nav').removeClass('open');
-      $('.header__menu').removeClass('open');
-    }
-    $('.header').addClass('open');
-    $('.about-popap').addClass('open');
-    $('.strelca-top').css('z-index', '1');
-  });
-
-  $('.back.close').on('click', function(e) {
-    e.preventDefault();
-    $('.header__contact').removeClass('open');
-    $('.about-popap').removeClass('open');
-    $('.header').removeClass('open');
-    $('.strelca-top').removeAttr('style');
-  });
 
   //language block
   $('.language-items').on('click', function() {
