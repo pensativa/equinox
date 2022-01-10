@@ -96,6 +96,7 @@ const pageSlider = new Swiper('.project__page-slider', {
   //Callback
   $('.header__contact').on('click', function(e) {
     e.preventDefault();
+    $('.header__contact').addClass('open');
     if ($('.main__nav').hasClass('open')) {
       $('.main__nav').removeClass('open');
       $('.header__menu').removeClass('open');
@@ -107,6 +108,7 @@ const pageSlider = new Swiper('.project__page-slider', {
 
   $('.back.close').on('click', function(e) {
     e.preventDefault();
+    $('.header__contact').removeClass('open');
     $('.about-popap').removeClass('open');
     $('.header').removeClass('open');
     $('.strelca-top').removeAttr('style');

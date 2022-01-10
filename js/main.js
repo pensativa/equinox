@@ -27,6 +27,12 @@ let pageSlider = new Swiper('.page', {
     speed: 800,
     //freeMode: freeMode(),
     init: false,
+    breakpoints: {
+      845: {
+        resizeObserver: false,
+        updateOnWindowResize: false,
+      },
+    },
     on: {
         init: function () {
             menuSlider();
@@ -39,9 +45,6 @@ let pageSlider = new Swiper('.page', {
             reviewHide();
             setTimeout(deleteHash, 100);
             menuLinks[pageSlider.realIndex].classList.add('active');
-        },
-        resize: function () {
-
         },
     },
 });
@@ -223,6 +226,7 @@ pageSlider.init();
   //Callback
   $('.header__contact').on('click', function(e) {
     e.preventDefault();
+    $('.header__contact').addClass('open');
     if ($('.main__nav').hasClass('open')) {
       $('.main__nav').removeClass('open');
       $('.header__menu').removeClass('open');
@@ -237,6 +241,7 @@ pageSlider.init();
 
   $('.back.close').on('click', function(e) {
     e.preventDefault();
+    $('.header__contact').removeClass('open');
     $('.about-popap').removeClass('open');
     $('.header').removeClass('open');
     setTimeout(function(){
@@ -272,13 +277,8 @@ pageSlider.init();
     $('.about-video').removeClass('open');
   });
 
-  /*$('.video-popap').on('click', function(e) {
-    e.preventDefault();
-
-  });*/
-
   //Vacations popap
-  $('.about3__form').on('click', function() {
+  $('.about-team__form').on('click', function() {
     $('.modal').fadeIn(500);
   });
 
@@ -311,7 +311,7 @@ pageSlider.init();
     $('.review__list').addClass('open');
   });
 
-  //test animejs
+  //front animejs
   function fitElementToParent(el, padding) {
   var timeout = null;
   function resize() {

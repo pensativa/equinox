@@ -691,7 +691,7 @@ template {
     padding: 0 20px 0 60px;
   }
 }
-@media (max-height: 400px) and (orientation: landscape) {
+@media (max-height: 430px) and (orientation: landscape) {
   .full-screen::after {
     content: "Пожалуйста, переверните устройство для корректной работы сайта";
     font-family: "Equinox", sans-serif;
@@ -700,6 +700,8 @@ template {
     width: 100%;
     height: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
     background-color: #000;
     color: #fff;
     z-index: 1000;
@@ -797,6 +799,13 @@ template {
 .pages__header .header__menu:hover,
 .pages__header .header__menu:focus {
   color: #e35d14;
+}
+
+.header__contact.open {
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 .header__right {
@@ -1038,6 +1047,10 @@ template {
             transform: rotate(-230deg) translateX(-10px);
   }
 
+  .header.open .header__burger span {
+    background-color: #000;
+  }
+
   .header__right {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1069,6 +1082,11 @@ template {
     background: #e35d14;
     bottom: 0;
     left: 0;
+  }
+
+  .header.open .header__phone {
+    -webkit-filter: brightness(0);
+            filter: brightness(0);
   }
 
   .main__nav {
@@ -1118,7 +1136,7 @@ template {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  z-index: 12;
+  z-index: 7;
 }
 
 .menu__link {
@@ -2074,7 +2092,7 @@ template {
   -ms-text-shadow: -1px -1px 0 #e35d14, 1px -1px 0 #e35d14, -1px 1px 0 #e35d14, 1px 1px 0 #e35d14;
 }
 
-.about2__img {
+.about-adv__img {
   -o-object-position: left;
      object-position: left;
   position: fixed;
@@ -2087,13 +2105,13 @@ template {
   margin-left: -48%;
 }
 
-.swiper-slide-active .about2__img {
+.swiper-slide-active .about-adv__img {
   left: 0;
   -webkit-transition: left 1s cubic-bezier(0.1, 0.39, 0, 1.12) 0s;
   transition: left 1s cubic-bezier(0.1, 0.39, 0, 1.12) 0s;
 }
 
-.about2__left-text {
+.about-adv__left-text {
   font-family: "Equinox", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -2103,7 +2121,7 @@ template {
   margin-left: 75px;
 }
 
-.about2 {
+.about-adv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2112,7 +2130,7 @@ template {
           align-items: center;
 }
 
-.about2__left {
+.about-adv__left {
   width: 50%;
   background-image: url("../img/Rectangle63.svg");
   background-position: bottom left;
@@ -2123,24 +2141,24 @@ template {
   padding-left: 12px;
 }
 
-.about2__right {
+.about-adv__right {
   width: 50%;
 }
 
-.about2_left-left,
-.about2_left-right {
+.about-adv_left-left,
+.about-adv_left-right {
   font-style: normal;
   font-weight: bold;
   font-size: 2vh;
   width: 50%;
   color: #000000;
 }
-.about2_left-left li,
-.about2_left-right li {
+.about-adv_left-left li,
+.about-adv_left-right li {
   padding: 10px 0;
 }
 
-.about2__left-box {
+.about-adv__left-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2157,7 +2175,7 @@ template {
   position: relative;
 }
 
-.about2_right {
+.about-adv_right {
   color: #fff;
   width: 50%;
   background-image: url("../img/Rectangle64.svg");
@@ -2166,70 +2184,70 @@ template {
   background-size: contain;
   padding-top: 60px;
 }
-.about2_right-text {
+.about-adv_right-text {
   font-family: "Equinox", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 2.5vh;
   margin-left: 50px;
 }
-.about2_right-box {
+.about-adv_right-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-top: 15px;
 }
-.about2_right-left, .about2_right-right {
+.about-adv_right-left, .about-adv_right-right {
   font-style: normal;
   font-weight: bold;
   font-size: 2vh;
   width: 50%;
 }
-.about2_right-left li, .about2_right-right li {
+.about-adv_right-left li, .about-adv_right-right li {
   padding: 10px 0;
 }
 
-.about2_left-left li:nth-of-type(5),
-.about2_right-left li:nth-of-type(5),
-.about2_left-right li:nth-of-type(5),
-.about2_right-right li:nth-of-type(5) {
+.about-adv_left-left li:nth-of-type(5),
+.about-adv_right-left li:nth-of-type(5),
+.about-adv_left-right li:nth-of-type(5),
+.about-adv_right-right li:nth-of-type(5) {
   padding-left: 25px;
 }
-.about2_left-left li:nth-of-type(4),
-.about2_right-left li:nth-of-type(4),
-.about2_left-right li:nth-of-type(4),
-.about2_right-right li:nth-of-type(4) {
+.about-adv_left-left li:nth-of-type(4),
+.about-adv_right-left li:nth-of-type(4),
+.about-adv_left-right li:nth-of-type(4),
+.about-adv_right-right li:nth-of-type(4) {
   padding-left: 30px;
 }
-.about2_left-left li:nth-of-type(3),
-.about2_right-left li:nth-of-type(3),
-.about2_left-right li:nth-of-type(3),
-.about2_right-right li:nth-of-type(3) {
+.about-adv_left-left li:nth-of-type(3),
+.about-adv_right-left li:nth-of-type(3),
+.about-adv_left-right li:nth-of-type(3),
+.about-adv_right-right li:nth-of-type(3) {
   padding-left: 35px;
 }
-.about2_left-left li:nth-of-type(2),
-.about2_right-left li:nth-of-type(2),
-.about2_left-right li:nth-of-type(2),
-.about2_right-right li:nth-of-type(2) {
+.about-adv_left-left li:nth-of-type(2),
+.about-adv_right-left li:nth-of-type(2),
+.about-adv_left-right li:nth-of-type(2),
+.about-adv_right-right li:nth-of-type(2) {
   padding-left: 40px;
 }
-.about2_left-left li:nth-of-type(1),
-.about2_right-left li:nth-of-type(1),
-.about2_left-right li:nth-of-type(1),
-.about2_right-right li:nth-of-type(1) {
+.about-adv_left-left li:nth-of-type(1),
+.about-adv_right-left li:nth-of-type(1),
+.about-adv_left-right li:nth-of-type(1),
+.about-adv_right-right li:nth-of-type(1) {
   padding-left: 45px;
 }
 
-.about3 {
+.about-team {
   -webkit-transition: 1.8s;
   transition: 1.8s;
   bottom: -200%;
   position: relative;
 }
-.about3_box {
+.about-team_box {
   position: relative;
 }
-.about3__title {
+.about-team__title {
   font-size: 10vh;
   color: #000000;
   background-color: #FFFFFF;
@@ -2237,14 +2255,14 @@ template {
   padding: 0 15px;
   position: relative;
 }
-.about3__p-top {
+.about-team__p-top {
   font-family: "Equinox", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 2.4vh;
   margin-top: 40px;
 }
-.about3__p-bottom {
+.about-team__p-bottom {
   font-family: "Equinox", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -2252,12 +2270,12 @@ template {
   margin-top: 30px;
   width: 50%;
 }
-.about3__p-bottom span {
+.about-team__p-bottom span {
   font-style: italic;
   font-weight: 900;
   font-size: 3.3vh;
 }
-.about3__form {
+.about-team__form {
   font-size: 2.7vh;
   padding: 33px 60px;
   left: 50%;
@@ -2266,13 +2284,13 @@ template {
   margin-top: 30px;
 }
 
-.swiper-slide-active .about3 {
+.swiper-slide-active .about-team {
   -webkit-transition: bottom 1s cubic-bezier(0.1, 0.39, 0, 1.12) 0s;
   transition: bottom 1s cubic-bezier(0.1, 0.39, 0, 1.12) 0s;
   bottom: 0;
 }
 
-.about3__title::before {
+.about-team__title::before {
   content: "";
   position: absolute;
   width: 200%;
@@ -2288,17 +2306,17 @@ template {
   left: 50%;
 }
 
-.swiper-slide-active .about3__title::before {
+.swiper-slide-active .about-team__title::before {
   width: 0;
 }
 
 @media (max-width: 1080px) {
-  .about2__img {
+  .about-adv__img {
     margin-left: -43%;
   }
 }
 @media (max-width: 855px) and (orientation: portrait) {
-  .about2__img {
+  .about-adv__img {
     display: none;
   }
 
@@ -2645,16 +2663,16 @@ template {
     max-width: 100%;
   }
 
-  .about2 {
+  .about-adv {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
 
-  .about2__left, .about2_right {
+  .about-adv__left, .about-adv_right {
     width: 100%;
   }
 
-  .about2__left {
+  .about-adv__left {
     background-color: #e35d14;
   }
 }
@@ -2667,12 +2685,12 @@ template {
     margin-left: 0;
   }
 
-  .about2__img {
+  .about-adv__img {
     display: none;
   }
 
-  .about2__left,
-.about2_right {
+  .about-adv__left,
+.about-adv_right {
     background-image: none;
     padding-top: 0;
     margin: 20px 0 0;
@@ -2680,7 +2698,7 @@ template {
     padding-bottom: 10px;
   }
 
-  .about2__left::after {
+  .about-adv__left::after {
     content: "";
     width: 100vw;
     height: 100%;
@@ -2693,74 +2711,74 @@ template {
     background-color: #e35d14;
   }
 
-  .about2__left-text,
-.about2_right-text {
+  .about-adv__left-text,
+.about-adv_right-text {
     margin: 0;
     padding: 20px 0;
     border-bottom: 1px solid #000;
     font-size: 15px;
   }
 
-  .about2_right-text {
+  .about-adv_right-text {
     padding-top: 0;
     border-color: #fff;
   }
 
-  .about2__left-box,
-.about2_right-box {
+  .about-adv__left-box,
+.about-adv_right-box {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
 
-  .about2__left .about2_left-left,
-.about2__left .about2_left-right,
-.about2_right .about2_right-left,
-.about2_right .about2_right-right {
+  .about-adv__left .about-adv_left-left,
+.about-adv__left .about-adv_left-right,
+.about-adv_right .about-adv_right-left,
+.about-adv_right .about-adv_right-right {
     width: 100%;
     font-size: 13px;
     margin-bottom: 10px;
   }
 
-  .about2_left-left li,
-.about2_left-right li,
-.about2_right-left li,
-.about2_right-right li {
+  .about-adv_left-left li,
+.about-adv_left-right li,
+.about-adv_right-left li,
+.about-adv_right-right li {
     padding: 5px 0 0 !important;
   }
 
-  .about3__title {
+  .about-team__title {
     font-size: 36px;
     white-space: nowrap;
   }
-  .about3__title::before {
+  .about-team__title::before {
     height: 50px;
   }
 
-  .swiper-slide-active .about3__title::before {
+  .swiper-slide-active .about-team__title::before {
     height: 0;
   }
 
-  .about3__p-bottom,
-.about3__p-top {
+  .about-team__p-bottom,
+.about-team__p-top {
     font-size: 15px;
     margin-top: 20px;
   }
 
-  .about3__p-bottom {
+  .about-team__p-bottom {
     width: 100%;
   }
 
-  .about3__form {
+  .about-team__form {
     font-size: 16px;
     padding: 23px 30px;
     text-transform: inherit;
   }
 }
 @media (max-width: 500px) {
-  .about2__left .about2_left-left,
-.about2__left .about2_left-right,
-.about2_right .about2_right-left,
-.about2_right .about2_right-right {
+  .about-adv__left .about-adv_left-left,
+.about-adv__left .about-adv_left-right,
+.about-adv_right .about-adv_right-left,
+.about-adv_right .about-adv_right-right {
     width: 50%;
     font-size: 11px;
     margin-bottom: 5px;
@@ -4790,6 +4808,15 @@ template {
   .header__logo-img {
     -webkit-transform-origin: left top;
             transform-origin: left top;
+  }
+}
+@media (max-width: 855px) {
+  .about-popap.project__order {
+    padding-top: 100px;
+  }
+
+  .about-popap.project__order .wrapper {
+    padding: 0 20px;
   }
 }
 @media (max-width: 650px) {
