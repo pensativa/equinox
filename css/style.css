@@ -752,6 +752,12 @@ template {
   }
 }
 @media (max-width: 855px) {
+  .full-screen {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+
   .full-screen .wrapper {
     padding: 0 80px 0 20px;
   }
