@@ -733,16 +733,11 @@ template {
   }
 }
 @media (max-width: 700px), (max-height: 600px) {
-  .page {
-    overflow-y: visible;
-  }
-
   .page::-webkit-scrollbar {
     width: 0;
   }
 
   .full-screen {
-    height: auto;
     background-color: #000;
   }
 }
