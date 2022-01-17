@@ -56,10 +56,18 @@ particleSystem.prototype.initCFG = function(cfg) {
   this.interval = 1000 / this.fps;
   this.delta;
   this.canvas_id = cfg.canvas_id || 'canvas';
-  this.min_dist = cfg.min_dist || 20;
+  this.min_dist = cfg.min_dist || 25;
   this.particles = [];
   this.width = cfg.width || window.innerWidth;
   this.height = cfg.height || window.innerHeight * 0.5;
+
+  //Adoptive
+  if (window.innerWidth < 700) {
+    this.fps = cfg.fps || 40;
+    this.min_dist = cfg.min_dist || 50;
+    this.width = cfg.width || 375;
+    this.height = cfg.height || 180;
+  }
 };
 
 particleSystem.prototype.initMessage = function() {
@@ -77,6 +85,12 @@ particleSystem.prototype.initMessage = function() {
 
   this.mask = this.ctx.getImageData(0, 0, this.width, this.height);
   this.area = [];
+
+  //Adoptive
+  if (window.innerWidth < 700) {
+    this.fontStr = '200px Arial Black, sans-serif';
+    this.ctx.fillText(this.str, this.width / 300, this.height / 300);
+  }
 
   // save all white pixels, these will be used as the bounds for the particles
   for (var i = 0; i < this.mask.data.length; i += 4) {
@@ -200,7 +214,7 @@ particleSystem.prototype.toPosY = function(i, w) {
 
 particleSystem.prototype.repaint = function() {
   // clear the screen
-  this.ctx.fillStyle = '#1d1d1d';
+  this.ctx.fillStyle = '#000000';
   this.ctx.fillRect(0, 0, this.width, this.height);
 };
 

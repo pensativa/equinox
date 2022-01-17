@@ -58,6 +58,9 @@
     $('.header').addClass('open');
     $('.about-popap').addClass('open');
     $('.strelca-top').css('z-index', '1');
+    setTimeout(function(){
+      $('.header__logo-img--black').attr('src', 'img/logo-menu.svg');
+    }, 400);
   });
 
   $('.back.close').on('click', function(e) {
@@ -66,6 +69,9 @@
     $('.about-popap').removeClass('open');
     $('.header').removeClass('open');
     $('.strelca-top').removeAttr('style');
+    setTimeout(function(){
+        $('.header__logo-img--black').attr('src', 'img/logo.svg');
+      }, 100);
   });
 
 }(jQuery));

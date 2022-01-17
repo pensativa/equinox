@@ -5930,7 +5930,21 @@ template {
 .no-page {
   width: 100%;
   min-height: 100vh;
-  background-color: #1d1d1d;
+  background-color: #000;
   color: #fff;
+  overflow-x: hidden;
+}
+
+.no-page__main {
+  text-align: center;
+}
+
+.no-page__title {
+  text-transform: uppercase;
+}
+
+#container {
+  margin: 150px auto 0;
+  z-index: 1;
 }
 /*# sourceMappingURL=style.css.map */
