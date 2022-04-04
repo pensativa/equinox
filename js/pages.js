@@ -57,6 +57,32 @@ const pageSlider = new Swiper('.project__page-slider', {
   },
 });
 
+const servicesSlider = new Swiper('.services__page-slider', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+  },
+  grabCursor: true,
+
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    hide: false,
+    draggable: true,
+  },
+});
+
 
   //Menu
   $('.header__menu').on('click', function(e) {
