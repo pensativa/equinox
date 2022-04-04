@@ -151,6 +151,21 @@ const servicesSlider = new Swiper('.services__page-slider', {
     setTimeout(deleteHash, 100)
   });
 
+  //Services nums
+  (function() {
+    const arrSer = document.querySelectorAll('.services__block-step');
+    if(!arrSer) {
+      return;
+    }
+    for (let i = 0; i < arrSer.length; i+=1) {
+      let num = i + 1;
+      var el = document.createElement('div');
+      el.classList.add('num');
+      el.append(num);
+      arrSer[i].prepend(el);
+    }
+  })();
+
 
 
 
