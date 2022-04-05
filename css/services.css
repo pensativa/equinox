@@ -289,50 +289,6 @@
     z-index: -1;
 }
 
-.services__exaples-more {
-    cursor: pointer;
-    font-style: italic;
-    font-weight: 800;
-    font-size: 20px;
-    margin-bottom: 80px;
-    margin-left: auto;
-    width: 190px;
-    text-align: center;
-}
-
-.services__exaples-strelca {
-    stroke: #E35D14;
-    margin-top: 10px;
-    transition: 0.3s linear;
-}
-
-.services__exaples-strelca:hover {
-    fill:#e35d14;
-    stroke: #fff;
-}
-
-.services__exaples-strelca path {
-    fill: #E35D14;
-}
-
-.services__exaples-strelca:hover path {
-    fill: #fff;
-}
-
-.services__exaples-more .black {
-    -webkit-text-stroke: 1px #000;
-    -webkit-text-fill-color: transparent;
-    -ms-color: transparent;
-    -ms-text-shadow: -1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
-}
-
-.services__exaples-more .orange {
-    -webkit-text-stroke: 1px #e35d14;
-    -webkit-text-fill-color: transparent;
-    -ms-color: transparent;
-    -ms-text-shadow: -1px -1px 0 #e35d14,1px -1px 0 #e35d14,-1px 1px 0 #e35d14,1px 1px 0 #e35d14;
-}
-
 .services__block-steps {
     display: flex;
     flex-wrap: wrap;
@@ -448,8 +404,13 @@
         background-color: #e35d14;
     }
 
-    .project__order .form::after, .swiper-slide-active .form::after {
-        display: none;
+    .project__order .form::after, 
+    .swiper-slide-active .form::after {
+        width: 100vw;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
