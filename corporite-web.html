@@ -12,7 +12,7 @@
     <link rel="preload" href="fonts/Equinox-Regular.woff2" as="font" crossorigin="anonymous">
 </head>
 
-<body class="pages">
+<body class="pages pages--services">
   <div style="display:none">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-menu" viewBox="0 0 30 18">
     <line x1="2" y1="1" x2="30" y2="1" stroke-width="2"></line>
@@ -69,8 +69,9 @@
       </div>
       <div class="language">
         <span class="language-icon"></span>
-        <span class="language-items">UA</span>
-        <span class="language-items active">RU</span>
+        <span class="language-items">EN</span>
+        <span class="language-items">TR</span>
+        <span class="language-items active">UA</span>
       </div>
       <div class="header__right">
         <a class="header__phone" href="tel:+3800000000">+38 096 642 02 01</a>
@@ -264,19 +265,22 @@
     <section>
         <div class="wrapper">
           <h2 class="services__block-title">Наші розробки сайтів:</h2>
-          <div class="services__exaples">
-              <div class="services__examle">
+          <div class="services__exaples-swiper swiper">
+            <div class="swiper-wrapper">
+              <div class="services__examle swiper-slide">
                   <div class="services__example-cat">категорія</div>
               </div>
-              <div class="services__examle">
+              <div class="services__examle swiper-slide">
                   <div class="services__example-cat">категорія</div>
               </div>
-              <div class="services__examle">
+              <div class="services__examle swiper-slide">
                   <div class="services__example-cat">категорія</div>
               </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
           </div>
           <div class="projects__button">
-            <a href="#">Больше работ</a>
+            <a href="projects.html">Больше работ</a>
           </div>
       </div>
     </section>

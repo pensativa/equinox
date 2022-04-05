@@ -83,6 +83,32 @@ const servicesSlider = new Swiper('.services__page-slider', {
   },
 });
 
+const servicesMobSlider = new Swiper('.services__exaples-swiper', {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  breakpoints: {
+    500: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView:'auto',
+      spaceBetween: 30,
+    },
+  },
+  grabCursor: true,
+
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    hide: false,
+    draggable: true,
+  },
+});
+
 
   //Menu
   $('.header__menu').on('click', function(e) {
