@@ -7,6 +7,7 @@
     <title>EQUINOX</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/services.css">
     <link rel="preload" href="fonts/Equinox-Regular.woff2" as="font" crossorigin="anonymous">
 </head>
 
@@ -115,7 +116,7 @@
       </ul>
     </nav>
   </header>
-    <a href="#" class="about-video"><img src="img/video-button.svg" alt="Воспроизвести видео" width="60" height="60">Play</a>
+    <!--<a href="#" class="about-video"><img src="img/video-button.svg" alt="Воспроизвести видео" width="60" height="60">Play</a>-->
     <div class="video-popap">
       <video class="video" preload="auto" muted="muted" controls="" loop="" playsinline="">
         <source src="video/about-video.mp4" type="video/mp4">
@@ -294,21 +295,18 @@
           <div class="screen__content">
             <div class="about-adv">
               <div class="about-adv__left">
-                <img class="about-adv__img" src="img/orange-bg.svg" alt="">
-                <p class="about-adv__left-text"> Нас запалюють ваші проекти , спонукаючи до найбільш неочікуваного вираження ідейної індивідуальності</p>
+                <p class="about-adv__left-text"> Нас запалюють ваші проекти, спонукаючи до найбільш неочікуваного вираження ідейної індивідуальності</p>
                 <div class="about-adv__left-box">
-                  <ul class="about-adv_left-left">
-                    <li>Digital стратегія</li>
-                    <li>Веб–дизайн</li>
-                    <li>Веб хостинг</li>
-                    <li>SEO</li>
-                    <li>UX</li>
-                  </ul>
-                  <ul class="about-adv_left-right">
-                    <li>Електронна комерція</li>
-                    <li>Створення контенту</li>
-                    <li>Веб-розробка і CMS</li>
-                    <li>Створення аплетів</li>
+                  <ul class="about-adv_list">
+                    <li>Digital стратегія <span>від <b>500$</b></span></li>
+                    <li>Веб–дизайн <span>від <b>500$</b></span></li>
+                    <li>Інтернет магазини <span>від <b>2500$</b></span></li>
+                    <li>SEO <span>від <b>450$</b></span></li>
+                    <li>Landing Page <span>від <b>1050$</b></span></li>
+                    <li>Індивідуальні сайти <span>від <b>3500$</b></span></li>
+                    <li>Мобільний додаток <span>від <b>3000$</b></span></li>
+                    <li>Контекстна реклама <span>від <b>400$</b></span></li>
+                    <li>Системи автоматизації бізнесу(СРМ) <span>від <b>1500$</b></span></li>
                   </ul>
                 </div>
               </div>
@@ -318,21 +316,43 @@
                   існує , лише декорації й атмосфера… лише погляд.... і гра почалась
                 </p>
                 <div class="about-adv_right-box">
-                  <ul class="about-adv_right-left">
-                    <li>Творчий копірайтинг</li>
-                    <li>Графічний дизайн</li>
-                    <li>Фотографії</li>
-                  </ul>
-                  <ul class="about-adv_right-right">
-                    <li>Дизайн канцелярських товарів</li>
-                    <li>Відеовиробництво</li>
-                    <li>Дизайн анімацій</li>
+                  <ul class="about-adv_list">
+                    <li>Творчий копірайтинг <span>від <b>10$</b></span></li>
+                    <li>Графічний дизайн <span>від <b>200$</b></span></li>
+                    <li>Фотографії <span>від <b>100$</b></span></li>
+                    <li>Брендинг <span>від <b>1000$</b></span></li>
+                    <li>Відеовиробництво <span>від <b>500$</b></span></li>
+                    <li>Просування у Instagram та Facebook <span>від <b>400$</b></span></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="page__screen screen screen-mobile">
+          <div class="screen__content">
+            <div class="about-adv">
+              <div class="about-adv__left">
+                <p class="about-adv_right-text">
+                  Оформлення простору – ніби створення гри , між аудиторією та уявою. Правил не
+                  існує , лише декорації й атмосфера… лише погляд.... і гра почалась
+                </p>
+                <div class="about-adv_right-box">
+                  <ul class="about-adv_list">
+                    <li>Творчий копірайтинг <span>від <b>10$</b></span></li>
+                    <li>Графічний дизайн <span>від <b>200$</b></span></li>
+                    <li>Фотографії <span>від <b>100$</b></span></li>
+                    <li>Брендинг <span>від <b>1000$</b></span></li>
+                    <li>Відеовиробництво <span>від <b>500$</b></span></li>
+                    <li>Просування у Instagram та Facebook <span>від <b>400$</b></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="page__screen screen">
           <div class="screen__content">
             <div class="about-team">
@@ -540,9 +560,10 @@
         </div>
       </div>
       <nav class="slider__menu menu">
-        <a href="" class="menu__link img">главная</a>
+        <a href="" class="menu__link img active">главная</a>
         <a href="" class="menu__link go img">о нас</a>
         <a href="" class="menu__link go dublicat">о нас</a>
+        <a href="" class="menu__link go dublicat mob-men">о нас</a>
         <a href="" class="menu__link go dublicat">о нас</a>
         <a href="" class="menu__link">почему мы</a>
         <a href="" class="menu__link dublicat">почему мы</a>

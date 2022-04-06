@@ -34,9 +34,12 @@ let pageSlider = new Swiper('.page', {
       },
     },
     on: {
+        beforeInit: function () {
+        },
         init: function () {
             menuSlider();
             hashGoToSlide();
+            removeMobSlide();
         },
         slideChange: function () {
             menuSlederRemove ();
@@ -70,6 +73,14 @@ function hashGoToSlide() {
   }
 }
 
+function removeMobSlide() {
+  const mobileLink = document.querySelector('.mob-men');
+  if (window.innerWidth > 768) {
+    pageSlider.removeSlide(3);
+    mobileLink.remove();
+  }
+}
+
 //Удаляет хэш из url
 
 function deleteHash() {
@@ -85,15 +96,32 @@ function deleteHash() {
 //Активные стили для ссылок
 let menuLinks = document.querySelectorAll('.menu__link');
 function menuSlider() {
-  if (pageSlider.realIndex > 0 && pageSlider.realIndex < 4) {
-    menuSlederRemove();
-    menuLinks[1].classList.add('active');
-  } else if (pageSlider.realIndex > 3 && pageSlider.realIndex < 6) {
-    menuSlederRemove();
-    menuLinks[4].classList.add('active');
+  if (window.innerWidth > 768) {
+    console.log(menuLinks);
+    if (pageSlider.realIndex > 0 && pageSlider.realIndex < 4) {
+      menuSlederRemove();
+      menuLinks[1].classList.add('active');
+    } else if (pageSlider.realIndex > 3 && pageSlider.realIndex < 6) {
+      menuSlederRemove();
+      menuLinks[5].classList.add('active');
+    } else {
+      menuSlederRemove();
+      menuLinks[pageSlider.realIndex].classList.add('active');
+    }
   } else {
-    menuSlederRemove();
-    menuLinks[pageSlider.realIndex].classList.add('active');
+    if (pageSlider.realIndex > 0 && pageSlider.realIndex < 5) {
+      menuSlederRemove();
+      menuLinks[1].classList.add('active');
+    } else if (pageSlider.realIndex > 4 && pageSlider.realIndex < 7) {
+      menuSlederRemove();
+      menuLinks[5].classList.add('active');
+    } else if (pageSlider.realIndex === 0) {
+      menuSlederRemove();
+      menuLinks[0].classList.add('active');
+    } else {
+      menuSlederRemove();
+      menuLinks[pageSlider.realIndex + 1].classList.add('active');
+    }
   }
 
   //Стили по клику
@@ -156,7 +184,10 @@ function reviewHide() {
   }
 }
 
+
 pageSlider.init();
+
+
 
   //Menu
   $('.header__menu').on('click', function(e) {
