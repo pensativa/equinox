@@ -42,9 +42,9 @@ let pageSlider = new Swiper('.page', {
             removeMobSlide();
         },
         slideChange: function () {
-            menuSlederRemove ();
+            menuSlederRemove();
             addClassForSocialRound();
-            menuSlider();
+            setTimeout(menuSlider, 100);
             reviewHide();
             setTimeout(deleteHash, 100);
             menuLinks[pageSlider.realIndex].classList.add('active');
@@ -57,19 +57,19 @@ let pageSlider = new Swiper('.page', {
 function hashGoToSlide() {
   const hash = window.location.hash;
   if (hash === '#portfolio') {
-    pageSlider.slideTo(6, 0);
-  }
-
-  if(hash === '#services') {
     pageSlider.slideTo(7, 0);
   }
 
-  if(hash === '#review') {
+  if(hash === '#services') {
     pageSlider.slideTo(8, 0);
   }
 
-  if(hash === '#contacts') {
+  if(hash === '#review') {
     pageSlider.slideTo(9, 0);
+  }
+
+  if(hash === '#contacts') {
+    pageSlider.slideTo(10, 0);
   }
 }
 
@@ -96,31 +96,27 @@ function deleteHash() {
 //Активные стили для ссылок
 let menuLinks = document.querySelectorAll('.menu__link');
 function menuSlider() {
+  let num = pageSlider.activeIndex + 1;
+  menuSlederRemove();
   if (window.innerWidth > 768) {
-    console.log(menuLinks);
     if (pageSlider.realIndex > 0 && pageSlider.realIndex < 4) {
-      menuSlederRemove();
       menuLinks[1].classList.add('active');
     } else if (pageSlider.realIndex > 3 && pageSlider.realIndex < 6) {
-      menuSlederRemove();
       menuLinks[5].classList.add('active');
-    } else {
-      menuSlederRemove();
-      menuLinks[pageSlider.realIndex].classList.add('active');
+    } else if (pageSlider.realIndex === 0) {
+      menuLinks[0].classList.add('active');
+    } else if (pageSlider.realIndex > 5) {
+      menuLinks[num].classList.add('active');
     }
   } else {
     if (pageSlider.realIndex > 0 && pageSlider.realIndex < 5) {
-      menuSlederRemove();
       menuLinks[1].classList.add('active');
     } else if (pageSlider.realIndex > 4 && pageSlider.realIndex < 7) {
-      menuSlederRemove();
       menuLinks[5].classList.add('active');
     } else if (pageSlider.realIndex === 0) {
-      menuSlederRemove();
       menuLinks[0].classList.add('active');
     } else {
-      menuSlederRemove();
-      menuLinks[pageSlider.realIndex + 1].classList.add('active');
+      menuLinks[pageSlider.realIndex].classList.add('active');
     }
   }
 
@@ -130,9 +126,15 @@ function menuSlider() {
     menuLink.addEventListener("click", function (e) {
       e.preventDefault();
       menuSlederRemove();
-      if(!this.classList.contains("dublicat")) {
+      if (index < 2) {
         pageSlider.slideTo(index, 800);
         menuLink.classList.add('active');
+      } else {
+        let num = index - 1;
+        if(!this.classList.contains("dublicat")) {
+          pageSlider.slideTo(num, 800);
+          menuLink.classList.add('active');
+        }
       }
     });
   }
@@ -153,9 +155,11 @@ function menuSlider() {
 
 //Удаление активыных стилей для ссылок
 function menuSlederRemove() {
-    let menuLinkActive = document.querySelector('.menu__link.active');
+    let menuLinkActive = document.querySelectorAll('.menu__link.active');
     if (menuLinkActive) {
-        menuLinkActive.classList.remove('active');
+        menuLinkActive.forEach(element => {
+          element.classList.remove('active');
+        });
     }
 }
 
